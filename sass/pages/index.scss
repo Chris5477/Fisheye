@@ -13,14 +13,18 @@
   text-align: center;
 }
 
+.logo {
+  margin-left: 25px;
+}
+
 .index_header {
-margin-left: 100px;
-  @include size-container(75%, 10vh);
+  @include size-container(100%, 10vh);
   @include flex(space-between, center);
 }
 
 .index_nav {
-  width: 65%;
+  width: 40%;
+  display: inline;
   & span a {
     color: $txt-bgwhite;
     font-size: 14px;
@@ -29,15 +33,12 @@ margin-left: 100px;
 }
 
 .index_maintitle {
-  position: absolute;
-  top: 2%;
-  right: 5%;
+  width: 20%;
   font-weight: normal;
   letter-spacing: 1px;
   color: $txt-bgwhite;
   font-size: 35px;
 }
-
 
 .our_photographers {
   @include size-container(95%, auto);
@@ -53,41 +54,41 @@ margin-left: 100px;
   margin: 40px 0;
   &__profil {
     color: $txt-secondary;
-     .name_photographer {
+    .name_photographer {
       font-size: 30px;
-      font-weight:200;
+      font-weight: 200;
       letter-spacing: 1px;
       text-align: center;
       margin: 0;
-    }.photo_photographer{
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
+    }
+    .photo_photographer {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
     }
   }
 }
 
-.moreinfo{
-    text-align: center;
-    &__country{
-        color:$txt-bgwhite;
-        font-size: 14px;
-    }&__slogan{
-        color: $txt-etatchange;
-        font-size: 12px;
-        font-weight: bolder;
-    }&__price{
-        color:$txt-bglight;
-        font-weight: 10px;
-    }&--nomargin{
-    margin:0;
+.moreinfo {
+  text-align: center;
+  &__country {
+    color: $txt-bgwhite;
+    font-size: 14px;
+  }
+  &__slogan {
+    color: $txt-etatchange;
+    font-size: 12px;
+    font-weight: bolder;
+  }
+  &__price {
+    color: $txt-bglight;
+    font-weight: 10px;
+  }
+  &--nomargin {
+    margin: 0;
+  }
 }
+
+.modifh2 {
+  font-size: 25px;
 }
-
-.modifh2{
-    font-size: 25px;
-}
-
-
-
-

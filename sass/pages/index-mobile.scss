@@ -1,0 +1,50 @@
+@media screen and (max-width:798px){
+
+    .link_anchor{
+        display: none;
+    }
+
+    .index_header{
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        margin: 10px 20px;
+    }
+
+    .img_link{
+        width: 39%;
+    }
+
+    .logo{
+        display: block;
+        width: 100%;
+        margin: 0;
+        order:1;
+    }
+
+    .index_maintitle{
+        width: 59%;
+        order:2;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .index_nav{
+        width: 100%;
+        order: 3;
+        & span a{
+            text-align: center;
+        }
+    }
+
+  .our_photographers{
+      @include flex(center,flex-start);
+      @include size-container(100%,auto);
+      flex-direction: column;
+      margin: 10px 0;
+  }
+
+  .photographer{
+      @include size-container(100%,auto);
+  }
+}
+
