@@ -1,4 +1,4 @@
-Réalisation du site FishEye peremttant de proposer à une clientèle des photographes.
+Réalisation du site FishEye permettant de proposer à une clientèle des photographes.
 Ce site doit être respecté les normes WCAG .
 
 1 ere etape réaliser la maquette du site et la styliser et la rendre respnsive
