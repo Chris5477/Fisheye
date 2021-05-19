@@ -1,5 +1,5 @@
-.photo_photographer{
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-}
+@import "utils/variables";
+@import "utils/mixin";
+@import "utils/extensions";
+@import "bases/base";
+@import "pages/index.scss";

@@ -1,7 +1,115 @@
-.photo_photographer {
+body {
+  width: 95%;
+  height: 100vh;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* a {
+  color: black;
+  text-decoration: none;
+}
+
+.link_anchor {
+  display: inline-block;
+  background-color: #db8776;
+  color: black;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  font-size: 18px;
+  width: 150px;
+  padding: 3px;
+  text-align: center;
+}
+
+.index_header {
+  margin-left: 100px;
+  width: 75%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.index_nav {
+  width: 65%;
+}
+.index_nav span a {
+  color: #901c1c;
+  font-size: 14px;
+  margin: 0 5px;
+}
+
+.index_maintitle {
+  position: absolute;
+  top: 2%;
+  right: 5%;
+  font-weight: normal;
+  letter-spacing: 1px;
+  color: #901c1c;
+  font-size: 35px;
+}
+
+.our_photographers {
+  width: 95%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 100px;
+  flex-wrap: wrap;
+}
+
+.photographer {
+  width: 30%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 40px 0;
+}
+.photographer__profil {
+  color: #d3573c;
+}
+.photographer__profil .name_photographer {
+  font-size: 30px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  text-align: center;
+  margin: 0;
+}
+.photographer__profil .photo_photographer {
   width: 200px;
   height: 200px;
   border-radius: 50%;
+}
+
+.moreinfo {
+  text-align: center;
+}
+.moreinfo__country {
+  color: #901c1c;
+  font-size: 14px;
+}
+.moreinfo__slogan {
+  color: black;
+  font-size: 12px;
+  font-weight: bolder;
+}
+.moreinfo__price {
+  color: #525252;
+  font-weight: 10px;
+}
+.moreinfo--nomargin {
+  margin: 0;
+}
+
+.modifh2 {
+  font-size: 25px;
 }
 
 /*# sourceMappingURL=main.css.map */
