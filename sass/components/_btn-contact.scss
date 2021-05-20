@@ -1,0 +1,18 @@
+.contact_photographer{
+    padding: 15px;
+    background-color: $bg-primary;
+    color:$txt-primary;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    bottom: 40px;
+    right: 250px;
+    border-radius: 5px;
+    &:hover{
+        background-color: $bg-etatchange;
+        color: $txt-etatchange;
+    }&:focus{
+        background-color: $bg-etatchange;
+        color: $txt-etatchange;
+    }
+}

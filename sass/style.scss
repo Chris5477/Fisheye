@@ -2,6 +2,10 @@
 @import "utils/mixin";
 @import "utils/extensions";
 @import "bases/base";
+@import "components/btn-contact";
+@import "components/btn-senddata";
+@import "components/modale";
+@import "layout/header_page";
 @import "pages/index.scss";
 @import "pages/index-mobile.scss";
 @import "pages/page_photographer";

@@ -1,0 +1,15 @@
+.senddata{
+    padding: 20px;
+    background-color: $bg-primary;
+    color:$txt-primary;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    &:hover{
+        background-color: $bg-etatchange;
+        color: $txt-etatchange;
+    }&:focus{
+        background-color: $bg-etatchange;
+        color: $txt-etatchange;
+    }
+}

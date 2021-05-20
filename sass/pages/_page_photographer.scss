@@ -1,4 +1,102 @@
-img{
-    width: 150px;
-    height: 150px;
+.pages_main {
+  @include size-container(90%, auto);
+}
+.info_photographer {
+  @include size-container(90%, 300px);
+  @include flex(space-around, center);
+  margin: auto;
+  &__name {
+    color: $txt-secondary;
+    font-size: 70px;
+    font-weight: normal;
+    margin: 10px 30px;
+  }
+  &__country {
+    color: $txt-bgwhite;
+    font-size: 22px;
+    margin: 5px 30px;
+  }
+  &__slogan {
+    color: $txt-bglight;
+    margin: 10px 30px;
+  }
+}
+.tagofphotographer a {
+  color: $txt-bgwhite;
+  padding-left: 30px;
+}
+
+.picture-profil {
+  @include size-container(200px, 200px);
+  border-radius: 50%;
+}
+
+.work_photographer {
+  @include size-container(95%, auto);
+  margin: auto;
+}
+
+.sample {
+  display: none;
+}
+
+.form_organize{
+  margin:0 0 20px 125px;
+  & label{
+    font-weight: bold;
+    font-size: 22px;
+  }
+}
+.organize , option{
+  margin-left: 20px;
+  padding: 15px;
+  background-color: $bg-primary;
+  color :$txt-primary;
+  border-radius: 5px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+
+.container-picture {
+  @include size-container(100%, auto);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 400px);
+  grid-gap: 80px;
+  justify-content: center;
+}
+
+.picture {
+  margin: 0;
+  @include size-container(30%, 430px);
+  img {
+    @include size-container(400px, 400px);
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+  }
+  .describe-picture {
+    color: $txt-bgwhite;
+    font-weight: 500;
+    font: 25px;
+    @include size-container(390px, auto);
+    @include flex(space-between, center);
+    padding: 5px;
+  }
+}
+
+.like_and_price{
+    @include flex(space-between, center);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    height: 40px;
+    background-color:$bg-etatchange;
+    font-size: 18px;
+    padding: 0 15px;
+    
+    p{
+        display: inline;
+    }
 }

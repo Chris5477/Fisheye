@@ -16,7 +16,7 @@
     </header>
     <main class="pages-main">
             <div class="info_photographer">
-            <h1 class="name_photographer">Nabeel Bradford</h1>
+            <h1 class="info_photographer__name">Nabeel Bradford</h1>
                 <p class="info_photographer__country" lang="en">Mexico City, Mexico</p>
                 <p class="info_photographer__slogan">Je vais toujours de l'avant</p>
                 </div>
@@ -25,18 +25,21 @@
                 <span class="tagofphotographer"><a href="#">#portrait</a></span>
               </div>
               <button class="contact_photographer">Contactez-moi</button>
-              <img src="ressources/Photographes/NabeelBradford.jpg" alt="Nabeel Bradford">
+              <img class="picture-profil" src="ressources/Photographes/NabeelBradford.jpg" alt="Nabeel Bradford">
         <section class="work_photographer">
             <h2 class="sample">Echantillon des travaux du photographes</h2>
             <label for="organize" class="label-organize">Trier par</label>
-            <select name="organize" id="organize" class="organize">
-                <option value="popularite">Popularité</option>
-                <option value="date">Date</option>
-                <option value="titre">Titre</option>
-            </select>
+            <form action="#" method="get" class="form_organize">
+                <label for="organize">Trier par</label>
+                <select name="organize" id="organize" class="organize">
+                    <option value="popularite">Popularité</option>
+                    <option value="date">Date</option>
+                    <option value="titre">Titre</option>
+                </select>
+                </form>
             <div class="container-picture">
                 <figure class="picture">
-                    <img src="/home/christopher/Bureau/Fisheye/ressources/Nabeel/Travel_Boat_Wanderer.jpg"
+                    <img src="ressources/Nabeel/Travel_Boat_Wanderer.jpg"
                          alt="photo paysage">
                     <figcaption class="describe-picture" lang="en">Boat Wonderer<span class="fas fa-heart"></span></figcaption>
                 </figure>
@@ -83,7 +86,7 @@
             </div>
         </section>
         <div class="like_and_price">
-            <p class="liked">297081 <span class="fas fa-heart"></span> 350€/jour </p>
+            <p class="liked">297081<span class="fas fa-heart"></span></p><p>350€/jour</p>
         </div>
         <div class="modal_contact">
             <div class="content_modal">
@@ -91,7 +94,7 @@
                     <h1>Contactez-moi Nabeel Bradford</h1>
                     <span class="close_modal">X</span>
                 </header>
-                <form action="#" method="POST" class="contact_photographer">
+                <form action="#" method="POST" class="forms_photographer">
                     <label for="firstname">Prénom</label>
                     <input type="text" id="firstname" name="firstname" class="firstname" />
                     <label for="lastname">Nom</label>
@@ -100,7 +103,7 @@
                     <input type="email" id="mail" name="mail" class="mail" />
                     <label for="message">Votre message</label>
                     <textarea name="message" id="message" cols="20" rows="10"></textarea>
-                    <input type="submit" value="Envoyer" />
+                    <input class="senddata" type="submit" value="Envoyer" />
                 </form>
             </div>
         </div>
