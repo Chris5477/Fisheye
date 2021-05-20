@@ -1,3 +1,55 @@
 .modal_contact{
-    display: none;
+    display:none;
+}
+
+.openModal{
+    display: initial;
+    position: fixed;
+    top: 0;
+    left: 0;
+    @include size-container(100%, 100vh);
+    @include flex(center, center);
+    background-color:$bg-etatchange;
+}
+
+.content_modal{
+    @include size-container(40%,90vh);
+    margin: 50px auto;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px darken($color: $bg-etatchange, $amount: 10%),
+                -3px -3px 3px lighten($color: $bg-etatchange, $amount: 10%);
+}
+    .head_forms{
+        @include flex(space-between, center);
+        h1{
+            font-size: 60px;
+            margin-left: 25px;
+            font-weight: normal;
+        }
+    }
+
+.forms_photographer{
+    @include size-container(100%, 85vh);
+    @include flex(flex-start, flex-start);
+    margin: auto;
+    flex-direction: column;
+    
+}
+
+.formData{
+    @include size-container(95%,auto);
+    margin: 10px auto;
+    label{
+        font-size: 25px;
+        letter-spacing: 1px;
+        font-weight: 200;
+    }
+    input{
+        @include size-container(98%, 40px);
+        border-radius: 5px;
+        margin: auto;
+    }
+    textarea{
+        @include size-container(98%, 160px);
+    }
 }

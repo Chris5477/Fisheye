@@ -1,10 +1,11 @@
 .senddata{
-    padding: 20px;
+    padding: 15px 40px;
     background-color: $bg-primary;
     color:$txt-primary;
     font-size: 18px;
     font-weight: bold;
     border-radius: 5px;
+    margin-left: 15px;
     &:hover{
         background-color: $bg-etatchange;
         color: $txt-etatchange;

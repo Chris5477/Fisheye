@@ -38,7 +38,6 @@
                 <option value="titre">Titre</option>
             </select>
             </form>
-            
             <div class="container-picture">
                 <figure class="picture">
                     <img src="ressources/Mimi/Animals_Rainbow.jpg"
@@ -93,22 +92,31 @@
         <div class="modal_contact">
             <div class="content_modal">
                 <header class="head_forms">
-                    <h1>Contactez-moi Mimi Keel</h1>
-                    <span class="close_modal">X</span>
+                    <h1>Contactez-moi <br />Mimi Keel</h1>
+                    <button class="close_modal">x</button>
                 </header>
                 <form action="#" method="POST" class="forms_photographer">
-                    <label for="firstname">Prénom</label>
-                    <input type="text" id="firstname" name="firstname" class="firstname" />
-                    <label for="lastname">Nom</label>
-                    <input type="text" id="lastname" name="lastname" class="lastname" />
-                    <label for="mail">Email</label>
-                    <input type="email" id="mail" name="mail" class="mail" />
-                    <label for="message">Votre message</label>
-                    <textarea name="message" id="message" cols="20" rows="10"></textarea>
+                    <div class="formData">
+                        <label for="firstname">Prénom</label>
+                        <input type="text" id="firstname" name="firstname" class="firstname" />
+                    </div>
+                    <div class="formData">
+                        <label for="lastname">Nom</label>
+                        <input type="text" id="lastname" name="lastname" class="lastname" />
+                    </div>
+                    <div class="formData">
+                        <label for="mail">Email</label>
+                        <input type="email" id="mail" name="mail" class="mail" />
+                    </div>
+                    <div class="formData">
+                        <label for="message">Votre message</label>
+                        <textarea name="message" id="message"></textarea>
+                    </div>
                     <input class="senddata" type="submit" value="Envoyer" />
                 </form>
             </div>
         </div>
     </main>
+    <script type="module" src="Javascript/app.js"></script>
 </body>
 </html>

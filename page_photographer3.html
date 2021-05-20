@@ -16,17 +16,17 @@
     </header>
     <main class="pages-main">
             <div class="info_photographer">
+                <div class="info_photographer__container">
             <h1 class="info_photographer__name">Tracy Galindo</h1>
                 <p class="info_photographer__country" lang="en">Montréal, Canada</p>
                 <p class="info_photographer__slogan">Photographe freelance</p>
+                    <span class="tagofphotographer"><a href="#">#art</a></span>
+                    <span class="tagofphotographer"><a href="#">#fashion</a></span>
+                    <span class="tagofphotographer"><a href="#">#events</a></span>
                 </div>
-              <div class="info_photographer__tag">
-                <span class="tagofphotographer"><a href="#">#art</a></span>
-                <span class="tagofphotographer"><a href="#">#fashion</a></span>
-                <span class="tagofphotographer"><a href="#">#events</a></span>
-              </div>
-              <button class="contact_photographer">Contactez-moi</button>
-              <img class="picture-profil" src="ressources/Photographes/TracyGalindo.jpg" alt="Tracy Galindo">
+                <button class="contact_photographer">Contactez-moi</button>
+                <img class="picture-profil" src="ressources/Photographes/TracyGalindo.jpg" alt="Tracy Galindo">
+            </div>
         <section class="work_photographer">
             <h2 class="sample">Echantillon des travaux du photographes</h2>
             <form action="#" method="get" class="form_organize">
@@ -66,11 +66,6 @@
                 <figure class="picture">
                     <img src="ressources/Tracy/Fashion_Urban_Jungle.jpg"
                          alt="Photo mannequin">
-                    <figcaption class="describe-picture" lang="en">Fashion Urban Jungle<span class="fas fa-heart"></span></figcaption>
-                </figure>
-                <figure class="picture">
-                    <img src="ressources/Tracy/Art_Triangle_Man.jpg"
-                         alt="Photo artistique">
                     <figcaption class="describe-picture" lang="en">"Triangle Man"<span class="fas fa-heart"></span></figcaption>
                 </figure>
                 <figure class="picture">
@@ -91,22 +86,31 @@
         <div class="modal_contact">
             <div class="content_modal">
                 <header class="head_forms">
-                    <h1>Contactez-moi Tracy Galindo</h1>
-                    <span class="close_modal">X</span>
+                    <h1>Contactez-moi <br />Tracy Galindo</h1>
+                    <button class="close_modal">x</button>
                 </header>
                 <form action="#" method="POST" class="forms_photographer">
-                    <label for="firstname">Prénom</label>
-                    <input type="text" id="firstname" name="firstname" class="firstname" />
-                    <label for="lastname">Nom</label>
-                    <input type="text" id="lastname" name="lastname" class="lastname" />
-                    <label for="mail">Email</label>
-                    <input type="email" id="mail" name="mail" class="mail" />
-                    <label for="message">Votre message</label>
-                    <textarea name="message" id="message" cols="20" rows="10"></textarea>
+                    <div class="formData">
+                        <label for="firstname">Prénom</label>
+                        <input type="text" id="firstname" name="firstname" class="firstname" />
+                    </div>
+                    <div class="formData">
+                        <label for="lastname">Nom</label>
+                        <input type="text" id="lastname" name="lastname" class="lastname" />
+                    </div>
+                    <div class="formData">
+                        <label for="mail">Email</label>
+                        <input type="email" id="mail" name="mail" class="mail" />
+                    </div>
+                    <div class="formData">
+                        <label for="message">Votre message</label>
+                        <textarea name="message" id="message"></textarea>
+                    </div>
                     <input class="senddata" type="submit" value="Envoyer" />
                 </form>
             </div>
         </div>
     </main>
+    <script type="module" src="Javascript/app.js"></script>
 </body>
 </html>

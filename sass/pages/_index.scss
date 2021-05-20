@@ -47,6 +47,10 @@
   flex-wrap: wrap;
 }
 
+.list_photographers{
+  display: none;
+}
+
 .photographer {
   @include size-container(30%, auto);
   @include flex(center, center);
