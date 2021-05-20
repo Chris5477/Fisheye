@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+        <script src="https://kit.fontawesome.com/45e38e596f.js" crossorigin="anonymous"></script>
+    <title>Rhode Dubois | FishEye</title>
+
+</head>
+
+<body>
+    <header class="pages-header">
+        <a class="img_link" href="index.html"><img class="logo" src="ressources/Logo_FishEye.png" alt="FishEye Home Page" /></a>
+    </header>
+    <main class="pages-main">
+            <div class="info_photographer">
+            <h1 class="name_photographer">Rhode Dubois</h1>
+                <p class="info_photographer__country" lang="en">Barcelona, Spain</p>
+                <p class="info_photographer__slogan">Créatrice de souvenirs</p>
+                </div>
+              <div class="info_photographer__tag">
+                <span class="tagofphotographer"><a href="#">#sport</a></span>
+                <span class="tagofphotographer"><a href="#">#fashion</a></span>
+                <span class="tagofphotographer"><a href="#">#events</a></span>
+                <span class="tagofphotographer"><a href="#">#animals</a></span>
+              </div>
+              <button class="contact_photographer">Contactez-moi</button>
+              <img src="ressources/Photographes/RhodeDubois.jpg" alt="Rhode Dubois">
+        <section class="work_photographer">
+            <h2 class="sample">Echantillon des travaux du photographes</h2>
+            <label for="organize" class="label-organize">Trier par</label>
+            <select name="organize" id="organize" class="organize">
+                <option value="popularite">Popularité</option>
+                <option value="date">Date</option>
+                <option value="titre">Titre</option>
+            </select>
+            <div class="container-picture">
+                <figure class="picture">
+                    <img src="ressources/Rhode/Event_Emcee.jpg"
+                         alt="Photo d'un artiste">
+                    <figcaption class="describe-picture" lang="en">Musical Festival Singer<span class="fas fa-heart"></span></figcaption>
+                </figure>
+                <figure class="picture">
+                    <img src="ressources/Rhode/Fashion_Melody_Red_on_Stripes.jpg"
+                         alt="Photo mannequin">
+                    <figcaption class="describe-picture" lang="en">Melody Red on Stripes<span class="fas fa-heart"></span></figcaption>
+                </figure>
+                <figure class="picture">
+                    <img src="ressources/Rhode/Sport_2000_with_8.jpg"
+                         alt="Photo de 4 sportifs">
+                    <figcaption class="describe-picture" lang="en">8 Rows<span class="fas fa-heart"></span></figcaption>
+                </figure>
+                <figure class="picture">
+                    <img src="ressources/Rhode/Event_KeyboardCheck.jpg"
+                         alt="Photo d'une pianiste">
+                    <figcaption class="describe-picture" lang="en">Musical Festival Keyboard<span class="fas fa-heart"></span></figcaption>
+                </figure>
+                <figure class="picture">
+                    <img src="ressources/Rhode/Fashion_Wings.jpg"
+                         alt="photo de deux mannequins">
+                    <figcaption class="describe-picture" lang="en">Fashion Wings<span class="fas fa-heart"></span></figcaption>
+                </figure>
+                <figure class="picture">
+                    <img src="ressources/Rhode/Sport_Butterfly.jpg"
+                         alt="photo d'un nageur">
+                    <figcaption class="describe-picture" lang="en">Sport Butterfly<span class="fas fa-heart"></span></figcaption>
+                </figure>
+                <figure class="picture">
+                    <img src="ressources/Rhode/Event_ProductPitch.jpg"
+                         alt="Photo d'une conférence">
+                    <figcaption class="describe-picture" lang="en">Product Pitch<span class="fas fa-heart"></span></figcaption>
+                </figure>
+                <figure class="picture">
+                    <img src="ressources/Rhode/Animals_Majesty.jpg"
+                         alt="Photo d'un cerf">
+                    <figcaption class="describe-picture" lang="en">Animal Majesty<span class="fas fa-heart"></span></figcaption>
+                </figure>
+                <figure class="picture">
+                    <img src="ressources/Rhode/Event_VentureConference.jpg"
+                         alt="Photo Conférence">
+                    <figcaption class="describe-picture" lang="en">Venture Conference<span class="fas fa-heart"></span></figcaption>
+                </figure>
+            </div>
+        </section>
+        <div class="like_and_price">
+            <p class="liked">297081 <span class="fas fa-heart"></span> 375€/jour </p>
+        </div>
+        <div class="modal_contact">
+            <div class="content_modal">
+                <header class="head_forms">
+                    <h1>Contactez-moi Rhode Dubois</h1>
+                    <span class="close_modal">X</span>
+                </header>
+                <form action="#" method="POST" class="contact_photographer">
+                    <label for="firstname">Prénom</label>
+                    <input type="text" id="firstname" name="firstname" class="firstname" />
+                    <label for="lastname">Nom</label>
+                    <input type="text" id="lastname" name="lastname" class="lastname" />
+                    <label for="mail">Email</label>
+                    <input type="email" id="mail" name="mail" class="mail" />
+                    <label for="message">Votre message</label>
+                    <textarea name="message" id="message" cols="20" rows="10"></textarea>
+                    <input type="submit" value="Envoyer" />
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

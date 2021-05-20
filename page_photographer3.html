@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+        <script src="https://kit.fontawesome.com/45e38e596f.js" crossorigin="anonymous"></script>
+    <title>Tracy Galindo | FishEye</title>
+
+</head>
+
+<body>
+    <header class="pages-header">
+        <a class="img_link" href="index.html"><img class="logo" src="ressources/Logo_FishEye.png" alt="FishEye Home Page" /></a>
+    </header>
+    <main class="pages-main">
+            <div class="info_photographer">
+            <h1 class="name_photographer">Tracy Galindo</h1>
+                <p class="info_photographer__country" lang="en">Montréal, Canada</p>
+                <p class="info_photographer__slogan">Photographe freelance</p>
+                </div>
+              <div class="info_photographer__tag">
+                <span class="tagofphotographer"><a href="#">#art</a></span>
+                <span class="tagofphotographer"><a href="#">#fashion</a></span>
+                <span class="tagofphotographer"><a href="#">#events</a></span>
+              </div>
+              <button class="contact_photographer">Contactez-moi</button>
+              <img src="ressources/Photographes/TracyGalindo.jpg" alt="Tracy Galindo">
+        <section class="work_photographer">
+            <h2 class="sample">Echantillon des travaux du photographes</h2>
+            <label for="organize" class="label-organize">Trier par</label>
+            <select name="organize" id="organize" class="organize">
+                <option value="popularite">Popularité</option>
+                <option value="date">Date</option>
+                <option value="titre">Titre</option>
+            </select>
+            <div class="container-picture">
+                <figure class="picture">
+                    <img src="ressources/Tracy/Art_Mine.jpg"
+                         alt="photo artistique">
+                    <figcaption class="describe-picture" lang="en">Art Mine<span class="fas fa-heart"></span></figcaption>
+                </figure>
+                <figure class="picture">
+                    <img src="ressources/Tracy/Event_18thAnniversary.jpg"
+                         alt="photo d'un anniversaire">
+                    <figcaption class="describe-picture" lang="en">18th Anniversary<span class="fas fa-heart"></span></figcaption>
+                </figure>
+                <figure class="picture">
+                    <img src="ressources/Tracy/Fashion_Pattern_on_Pattern.jpg"
+                         alt="photo mannequin">
+                    <figcaption class="describe-picture" lang="en">Fashion Pattern on a Pattern<span class="fas fa-heart"></span></figcaption>
+                </figure>
+                <figure class="picture">
+                    <img src="ressources/Tracy/Art_Purple_light.jpg"
+                         alt="Photo tunnel violet">
+                    <figcaption class="describe-picture" lang="en">Purple Tunnel <span class="fas fa-heart"></span></figcaption>
+                </figure>
+                <figure class="picture">
+                    <img src="ressources/Tracy/Event_Sparklers.jpg"
+                         alt="Photo de mariage">
+                    <figcaption class="describe-picture" lang="en">Sparkles<span class="fas fa-heart"></span></figcaption>
+                </figure>
+                <figure class="picture">
+                    <img src="ressources/Tracy/Fashion_Urban_Jungle.jpg"
+                         alt="Photo mannequin">
+                    <figcaption class="describe-picture" lang="en">Fashion Urban Jungle<span class="fas fa-heart"></span></figcaption>
+                </figure>
+                <figure class="picture">
+                    <img src="ressources/Tracy/Art_Triangle_Man.jpg"
+                         alt="Photo artistique">
+                    <figcaption class="describe-picture" lang="en">"Triangle Man"<span class="fas fa-heart"></span></figcaption>
+                </figure>
+                <figure class="picture">
+                    <img src="ressources/Tracy/Event_WeddingGazebo.jpg"
+                         alt="Photo autel de mariage">
+                    <figcaption class="describe-picture" lang="en">Wedding Gazebo<span class="fas fa-heart"></span></figcaption>
+                </figure>
+                <figure class="picture">
+                    <img src="ressources/Tracy/Fashion_Yellow_Beach.jpg"
+                         alt="Photo mannequin">
+                    <figcaption class="describe-picture" lang="en">Fashion Yellow Beach<span class="fas fa-heart"></span></figcaption>
+                </figure>
+            </div>
+        </section>
+        <div class="like_and_price">
+            <p class="liked">297081 <span class="fas fa-heart"></span> 500€/jour </p>
+        </div>
+        <div class="modal_contact">
+            <div class="content_modal">
+                <header class="head_forms">
+                    <h1>Contactez-moi Tracy Galindo</h1>
+                    <span class="close_modal">X</span>
+                </header>
+                <form action="#" method="POST" class="contact_photographer">
+                    <label for="firstname">Prénom</label>
+                    <input type="text" id="firstname" name="firstname" class="firstname" />
+                    <label for="lastname">Nom</label>
+                    <input type="text" id="lastname" name="lastname" class="lastname" />
+                    <label for="mail">Email</label>
+                    <input type="email" id="mail" name="mail" class="mail" />
+                    <label for="message">Votre message</label>
+                    <textarea name="message" id="message" cols="20" rows="10"></textarea>
+                    <input type="submit" value="Envoyer" />
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

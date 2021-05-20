@@ -166,5 +166,9 @@ body {
     height: auto;
   }
 }
+img {
+  width: 150px;
+  height: 150px;
+}
 
 /*# sourceMappingURL=main.css.map */

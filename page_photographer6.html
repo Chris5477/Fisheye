@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+        <script src="https://kit.fontawesome.com/45e38e596f.js" crossorigin="anonymous"></script>
+    <title>Marcel Nikolic | FishEye</title>
+
+</head>
+
+<body>
+    <header class="pages-header">
+        <a class="img_link" href="index.html"><img class="logo" src="ressources/Logo_FishEye.png" alt="FishEye Home Page" /></a>
+    </header>
+    <main class="pages-main">
+            <div class="info_photographer">
+            <h1 class="name_photographer">Marcel Nikolic</h1>
+                <p class="info_photographer__country" lang="en">Berlin, Germany</p>
+                <p class="info_photographer__slogan">Toujours à la recherche de LA photo</p>
+                </div>
+              <div class="info_photographer__tag">
+                <span class="tagofphotographer"><a href="#">#architecture</a></span>
+                <span class="tagofphotographer"><a href="#">#travel</a></span>
+              </div>
+              <button class="contact_photographer">Contactez-moi</button>
+              <img src="ressources/Photographes/MarcelNikolic.jpg" alt="Marcel Nikolic">
+        <section class="work_photographer">
+            <h2 class="sample">Echantillon des travaux du photographes</h2>
+            <label for="organize" class="label-organize">Trier par</label>
+            <select name="organize" id="organize" class="organize">
+                <option value="popularite">Popularité</option>
+                <option value="date">Date</option>
+                <option value="titre">Titre</option>
+            </select>
+            <div class="container-picture">
+                <figure class="picture">
+                    <img src="ressources/Marcel/Travel_Adventure_Door.jpg" alt="Photo d'un lieu en Inde">
+                    <figcaption class="describe-picture" lang="en">Adventure Door, India <span class="fas fa-heart"></span></figcaption>
+                </figure>
+                <figure class="picture">
+                    <img src="ressources/Marcel/Architecture_Corner_Room.jpg" alt="Photo d'une habitation">
+                    <figcaption class="describe-picture" lang="en">Corner Building and Blue Sky<span class="fas fa-heart"></span></figcaption>
+                </figure>
+                <figure class="picture">
+                    <img src="ressources/Marcel/Travel_Bike_and_Stair.jpg" alt="Photo d'un vélo">
+                    <figcaption class="describe-picture" lang="en">City Bike and Stair, Paris<span class="fas fa-heart"></span></figcaption>
+                </figure>
+                <figure class="picture">
+                    <img src="ressources/Marcel/Architecture_Dome.jpg" alt="Photo de la tour de Pise">
+                    <figcaption class="describe-picture" lang="en">Leaning Tower, Pisa<span class="fas fa-heart"></span></figcaption>
+                </figure>
+                <figure class="picture">
+                    <img src="ressources/Marcel/Travel_OpenMountain.jpg" alt="Photo d'un paysage">
+                    <figcaption class="describe-picture" lang="en">Mountain and Lake<span class="fas fa-heart"></span></figcaption>
+                </figure>
+                <figure class="picture">
+                    <img src="ressources/Marcel/Architecture_On_a_hill.jpg" alt="Photo d'un lieu au Tibet">
+                    <figcaption class="describe-picture" lang="en">On a Hill, Tibet<span class="fas fa-heart"></span></figcaption>
+                </figure>
+                <figure class="picture">
+                   <img src="ressources/Marcel/Travel_SunsetonCanals.jpg" alt="Photo d'un canal de Venise">
+                    <figcaption class="describe-picture" lang="en">Senset on Canals, Venice<span class="fas fa-heart"></span></figcaption>
+                </figure>
+                <figure class="picture">
+                    <img src="ressources/Marcel/Architecure_Contrast.jpg" alt="Photo architecture à St Petersburg">
+                    <figcaption class="describe-picture" lang="en">Contrast, St Petersburg<span class="fas fa-heart"></span></figcaption>
+                </figure>
+                <figure class="picture">
+                    <img src="ressources/Marcel/Travel_Tower.jpg" alt="Photo d'une tour Japonnaise à Kyoto">
+                    <figcaption class="describe-picture" lang="en">Japanese Tower, Kyoto<span class="fas fa-heart"></span></figcaption>
+                </figure>
+            </div>
+        </section>
+        <div class="like_and_price">
+            <p class="liked">297081 <span class="fas fa-heart"></span> 300€/jour </p>
+        </div>
+        <div class="modal_contact">
+            <div class="content_modal">
+                <header class="head_forms">
+                    <h1>Contactez-moi Marcel Nikolic</h1>
+                    <span class="close_modal">X</span>
+                </header>
+                <form action="#" method="POST" class="contact_photographer">
+                    <label for="firstname">Prénom</label>
+                    <input type="text" id="firstname" name="firstname" class="firstname" />
+                    <label for="lastname">Nom</label>
+                    <input type="text" id="lastname" name="lastname" class="lastname" />
+                    <label for="mail">Email</label>
+                    <input type="email" id="mail" name="mail" class="mail" />
+                    <label for="message">Votre message</label>
+                    <textarea name="message" id="message" cols="20" rows="10"></textarea>
+                    <input type="submit" value="Envoyer" />
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
