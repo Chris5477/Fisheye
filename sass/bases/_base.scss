@@ -1,11 +1,15 @@
 body{
     @include size-container(95%, 100vh);
-
     padding: 0;
     box-sizing: border-box;
 }
 
-*a{
+*ul, li, a{
     color:black;
     text-decoration: none;
+    list-style: none;
+}
+
+.hiddenElement{
+    display: none;
 }

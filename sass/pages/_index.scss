@@ -31,6 +31,13 @@
     margin: 0 5px;
   }
 }
+.index_nav ul{
+  @include flex(space-around, center);
+}
+
+.index_nav ul li{
+  margin: 0 10px;
+}
 
 .index_maintitle {
   width: 20%;

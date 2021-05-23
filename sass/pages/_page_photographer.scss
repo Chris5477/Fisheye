@@ -36,9 +36,6 @@
   margin: auto;
 }
 
-.sample {
-  display: none;
-}
 
 .form_organize{
   margin:0 0 20px 125px;
@@ -47,6 +44,23 @@
     font-size: 22px;
   }
 }
+
+input:not(:focus):invalid, textarea:not(:focus):invalid{
+  border: 5px solid red;
+  animation: errorData 0.5s ease-in-out 2 alternate;
+}
+@keyframes errorData{
+  0% {
+    transform: translateX(0px);
+  }
+  50%{
+    transform: translateX(-3px);
+  }
+  100%{
+    transform: translateX(3px);
+  }
+}
+
 .organize , option{
   margin-left: 20px;
   padding: 15px;
