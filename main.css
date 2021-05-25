@@ -371,21 +371,26 @@ body {
   height: auto;
 }
 
-.info_photographer {
-  width: 90%;
-  height: 300px;
+.profil_photographer {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-  margin: auto;
-  position: relative;
+  justify-content: flex-start;
+  align-items: center;
+  width: 60%;
+  height: auto;
+  margin-left: 100px;
 }
-.info_photographer__name {
+.profil_photographer__name {
   color: #d3573c;
   font-size: 50px;
   font-weight: 100;
   margin: 10px 30px;
+}
+
+.info_photographer {
+  width: 90%;
+  height: 200px;
+  position: relative;
+  margin-left: 100px;
 }
 .info_photographer__country {
   color: #901c1c;
@@ -395,11 +400,6 @@ body {
 .info_photographer__slogan {
   color: #525252;
   margin: 10px 30px;
-}
-.info_photographer .profil_photographer {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 }
 
 .tagofphotographer a {
@@ -412,7 +412,7 @@ body {
   height: 180px;
   border-radius: 50%;
   position: absolute;
-  top: 20%;
+  top: -40%;
   right: 0;
 }
 
@@ -516,29 +516,35 @@ input:not(:focus):invalid, textarea:not(:focus):invalid {
     padding-left: 25px;
   }
 
-  .info_photographer {
+  .profil_photographer {
     width: 100%;
-    height: auto;
-    justify-content: flex-start;
-    margin-bottom: 50px;
+    margin-left: 0;
   }
-  .info_photographer__name {
-    font-size: 40px;
-    margin: 5px 10px;
+  .profil_photographer__name {
+    color: #d3573c;
+    font-size: 30px;
+  }
+
+  .info_photographer {
+    width: 90%;
+    height: 100px;
+    position: relative;
+    margin-left: 20px;
   }
   .info_photographer__country {
-    font-size: 22px;
-    margin: 2px 10px;
+    color: #901c1c;
+    font-size: 18px;
+    margin: 5px 10px;
   }
   .info_photographer__slogan {
-    font-size: 20px;
+    font-size: 16px;
     margin: 5px 10px;
   }
 
   .picture-profil {
     width: 100px;
     height: 100px;
-    top: 0;
+    top: -60%;
   }
 
   .contact_photographer {

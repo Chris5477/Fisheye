@@ -15,11 +15,11 @@
         <a aria-label="Retour page d'acceuil" class="img_link" href="index.html"><img class="logo" src="ressources/Logo_FishEye.png" alt="FishEye Home Page" /></a>
     </header>
     <main class="pages-main">
-            <article tabindex="0" aria-label="Information sur Mimi Keel" class="info_photographer">
-                <header class="profil_photographer">
-                    <h1 class="info_photographer__name">Mimi Keel</h1>
-                    <button aria-label="Contactez-moi" class="contact_photographer">Contactez-moi</button>
+        <header class="profil_photographer">
+            <h1 class="profil_photographer__name">Mimi Keel</h1>
+            <button aria-label="Contactez-moi" class="contact_photographer">Contactez-moi</button>
                 </header>   
+            <article tabindex="0" aria-label="Information sur Mimi Keel" class="info_photographer">
                 <p tabindex="0" class="info_photographer__country" lang="en">London ,UK</p>
                 <p tabindex="0" class="info_photographer__slogan">Le beau dans le quotidien</p>
                 <div class="container_tag">
@@ -43,79 +43,59 @@
             </select>
             </form>
             <div class="container-picture">
-                <span class="big_picture" role="button" aria-label="Aggrandir l'image">
                     <figure class="picture">
                         <img tabindex="0" src="ressources/Mimi/Animals_Rainbow.jpg"
                         alt="">
                         <figcaption tabindex="0" class="describe-picture" lang="en">Rainbow Bird <span class="fas fa-heart"></span></figcaption>
                     </figure>
-                </span>
-                <span class="big_picture" role="button" aria-label="Aggrandir l'image">
                 <figure class="picture">
                     <img tabindex="0" src="ressources/Mimi/Travel_Lonesome.jpg"
                          alt="">
                     <figcaption tabindex="0" class="describe-picture" lang="en">Lonesome <span class="fas fa-heart"></span></figcaption>
                 </figure>
-                </span>
-                <span class="big_picture" role="button" aria-label="Aggrandir l'image">
                 <figure class="picture">
                     <img tabindex="0" src="ressources/Mimi/Event_SeasideWedding.jpg"
                          alt="">
                     <figcaption tabindex="0" class="describe-picture" lang="en">Seaside Wedding <span class="fas fa-heart"></span></figcaption>
                 </figure>
-                </span>
-                <span class="big_picture" role="button" aria-label="Aggrandir l'image">
                 <figure class="picture">
                     <img tabindex="0" src="ressources/Mimi/Portrait_Background.jpg"
                          alt="">
                     <figcaption tabindex="0" class="describe-picture" lang="en">Raw Black Portrait <span class="fas fa-heart"></span></figcaption>
                 </figure>
-                </span>
-                <span class="big_picture" role="button" aria-label="Aggrandir l'image">
                 <figure class="picture">
                     <img tabindex="0" src="ressources/Mimi/Event_PintoWedding.jpg"
                          alt="">
                     <figcaption tabindex="0" class="describe-picture" lang="en">Boulder Wedding <span class="fas fa-heart"></span></figcaption>
                 </figure>
-                </span>
-                <span class="big_picture" role="button" aria-label="Aggrandir l'image">
                 <figure class="picture">
                     <img tabindex="0" src="ressources/Mimi/Portrait_Wednesday.jpg"
                          alt="">
                     <figcaption tabindex="0" class="describe-picture" lang="en">Wednesday Potrait <span class="fas fa-heart"></span></figcaption>
                 </figure>
-                </span>
-                <span class="big_picture" role="button" aria-label="Aggrandir l'image">
                 <figure class="picture">
                     <img tabindex="0" src="ressources/Mimi/Event_BenevidesWedding.jpg"
                          alt="">
                     <figcaption tabindex="0" class="describe-picture" lang="en">Benevides Wedding <span class="fas fa-heart"></span></figcaption>
                 </figure>
-                </span>
-                <span class="big_picture" role="button" aria-label="Aggrandir l'image">
                 <figure class="picture">
                     <img tabindex="0" src="ressources/Mimi/Portrait_Nora.jpg"
                          alt="">
                     <figcaption tabindex="0" class="describe-picture" lang="en">Nora Portrait <span class="fas fa-heart"></span></figcaption>
                 </figure>
-                </span>
-                <span class="big_picture" role="button" aria-label="Aggrandir l'image">
                 <figure class="picture">
                     <img tabindex="0" src="ressources/Mimi/Travel_HillsideColor.jpg"
                          alt="">
                     <figcaption tabindex="0" class="describe-picture" lang="en">Hillside Color <span class="fas fa-heart"></span></figcaption>
                 </figure>
-                </span>
-                <span class="big_picture" role="button" aria-label="Aggrandir l'image">
                 <video class="video" controls>
                     <source src="ressources/Mimi/Animals_Wild_Horses_in_the_mountains.mp4" type="video/mp4">
                     <source src="ressources/Mimi/Animals_Wild_Horses_in_the_mountains.ogg" type="video/ogg">
                 </video>
-                </span>
             </div>
         </section>
         <div class="like_and_price">
-            <p tabindex="0" class="liked">297081<span role="button" class="fas fa-heart"></span></p><p>300€/jour</p>
+            <p tabindex="0" class="liked">297081<span class="fas fa-heart"></span></p><p>300€/jour</p>
         </div>
     </main>
     <div tabindex="0" role="dialog" aria-label="Modale de contact" class="modal_contact">
@@ -145,11 +125,10 @@
             </form>
         </div>
     </div>
-    <div tabindex="0" aria-label="lightbox" class="lightbox">
-        <span aria-label="Fermer la lightbox" class="close_lightbox">X</span>
+    <div tabindex="0" role="dialog" class="lightbox">
+        <span class="close_lightbox">X</span>
         <div class="content_lightbox">
             <button aria-label="Image précédente" class="btn previous"><span class="fas fa-chevron-left"></span></button>
-            <img class="picture_lightbox" src="" alt="">
             <button aria-label="image suivante" class="btn next"><span class="fas fa-chevron-right"></span></button>
         </div>
     </div>

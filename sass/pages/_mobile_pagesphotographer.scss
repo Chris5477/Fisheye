@@ -4,27 +4,34 @@
       padding-left: 25px;
     }
   }
-  .info_photographer {
-    @include size-container(100%, auto);
-    justify-content: flex-start;
-    margin-bottom: 50px;
+
+  .profil_photographer{
+    width: 100%;
+    margin-left:0;
     &__name {
-      font-size: 40px;
-      margin: 5px 10px;
-    }
-    &__country {
-      font-size: 22px;
-      margin: 2px 10px;
-    }
-    &__slogan {
-      font-size: 20px;
-      margin: 5px 10px;
+      color: $txt-secondary;
+      font-size: 30px;
     }
   }
 
+  .info_photographer {
+    @include size-container(90%,100px);
+    position: relative;
+    margin-left:20px;
+    &__country {
+      color: $txt-bgwhite;
+      font-size: 18px;
+      margin: 5px 10px;
+    }
+    &__slogan {
+      font-size: 16px;
+      margin: 5px 10px;
+    }
+  }
+  
   .picture-profil {
     @include size-container(100px, 100px);
-    top: 0;
+    top: -60%;
   }
 
   .contact_photographer {

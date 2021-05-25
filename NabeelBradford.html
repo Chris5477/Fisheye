@@ -12,20 +12,24 @@
 
 <body>
     <header class="pages-header">
-        <a class="img_link" href="index.html"><img class="logo" src="ressources/Logo_FishEye.png" alt="FishEye Home Page" /></a>
+        <a aria-label="Retour page d'acceuil" class="img_link" href="index.html"><img class="logo" src="ressources/Logo_FishEye.png" alt="FishEye Home Page" /></a>
     </header>
     <main class="pages-main">
-            <div tabindex="0" role="article" aria-label="Information sur Nabeel Bradford" class="info_photographer">
-                <div class="info_photographer__container">
-            <h1 class="info_photographer__name">Nabeel Bradford</h1>
+        <header class="profil_photographer">
+            <h1 class="profil_photographer__name">Nabeel Bradford</h1>
+            <button aria-label="Contactez-moi"  class="contact_photographer">Contactez-moi</button>
+        </header>
+             <article tabindex="0" aria-label="Information sur Nabeel Bradford" class="info_photographer">
                 <p tabindex="0" class="info_photographer__country" lang="en">Mexico City, Mexico</p>
                 <p tabindex="0" class="info_photographer__slogan">Je vais toujours de l'avant</p>
+                <div class="container_tag">
                     <span class="tagofphotographer"><a href="#">#travel</a></span>
                     <span class="tagofphotographer"><a href="#">#portrait</a></span>
               </div>
-              <button aria-label="Contactez-moi"  class="contact_photographer">Contactez-moi</button>
-              <img tabindex="0" aria-label="Photo de Nabeel Bradford" class="picture-profil" src="ressources/Photographes/NabeelBradford.jpg" alt="Nabeel Bradford">
-            </div>
+              <aside>
+                  <img tabindex="0" aria-label="Photo de Nabeel Bradford" class="picture-profil" src="ressources/Photographes/NabeelBradford.jpg" alt="Nabeel Bradford">
+              </aside>
+            </article>
         <section tabindex="0" aria-label="Travaux du photographe"  class="work_photographer">
             <h2 class="hiddenElement">Echantillon des travaux du photographes</h2>
             <form action="#" method="get" class="form_organize">
@@ -82,7 +86,7 @@
                          alt="">
                     <figcaption tabindex="0" class="describe-picture" lang="en">Road into the hill<span class="fas fa-heart"></span></figcaption>
                 </figure>
-                <video class="picture" controls>
+                <video class="video" controls>
                     <source src="ressources/Rhode/Animals_Puppiness.mp4" type="video/mp4">
                     <source src="ressources/Rhode/Animals_Puppiness.ogg" type="video/ogg">
                     <source src="ressources/Rhode/Animals_Puppiness.vtt" type="video/vtt">
@@ -96,7 +100,7 @@
     <div tabindex="0" role="dialog" aria-label="Modale de contact" class="modal_contact">
         <div class="content_modal">
             <header class="head_forms">
-                <h1 tabindex="0">Contactez-moi <br />Mimi Keel</h1>
+                <h1 tabindex="0">Contactez-moi <br />Nabeel Bradford</h1>
                 <button aria-label="Fermer la modal" class="close_modal">x</button>
             </header>
             <form action="#" method="POST" class="forms_photographer">
@@ -118,6 +122,13 @@
                 </div>
                 <input aria-label="Envoyer votre message" class="senddata" type="submit" value="Envoyer" />
             </form>
+        </div>
+    </div>
+    <div tabindex="0" role="dialog" class="lightbox">
+        <span class="close_lightbox">X</span>
+        <div class="content_lightbox">
+            <button aria-label="Image précédente" class="btn previous"><span class="fas fa-chevron-left"></span></button>
+            <button aria-label="image suivante" class="btn next"><span class="fas fa-chevron-right"></span></button>
         </div>
     </div>
     <script type="module" src="Javascript/app.js"></script>

@@ -1,18 +1,23 @@
 .pages_main {
   @include size-container(90%, auto);
 }
-.info_photographer {
-  @include size-container(90%, 300px);
-  @include flex(center, flex-start);
-  flex-direction: column;
-  margin: auto;
-  position: relative;
+
+.profil_photographer{
+  @include flex(flex-start, center);
+  @include size-container(60%,auto);
+  margin-left: 100px;
   &__name {
     color: $txt-secondary;
     font-size: 50px;
     font-weight: 100;
     margin: 10px 30px;
   }
+}
+
+.info_photographer {
+  @include size-container(90%,200px);
+  position: relative;
+  margin-left: 100px;
   &__country {
     color: $txt-bgwhite;
     font-size: 22px;
@@ -22,12 +27,8 @@
     color: $txt-bglight;
     margin: 10px 30px;
   }
-
-.profil_photographer{
-  @include flex(space-around, center);
 }
 
-}
 .tagofphotographer a {
   color: $txt-bgwhite;
   padding-left: 30px;
@@ -37,7 +38,7 @@
   @include size-container(180px, 180px);
   border-radius: 50%;
   position: absolute;
-  top: 20%;
+  top: -40%;
   right: 0;
 }
 
