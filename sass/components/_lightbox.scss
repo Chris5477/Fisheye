@@ -1,0 +1,25 @@
+.lightbox{
+    display: none;
+}
+
+.show_lightbox{
+    display: initial;
+    position: fixed;
+    top: 0;
+    left: 0;
+    @include size-container(100%, 100vh);
+    @include flex(center, center)
+}
+
+.content_lightbox{
+    border: 2px solid black;
+    @include size-container(90%, 80vh);
+    @include flex(space-between, center);
+    .btn{
+        padding:50px;
+        font-size: 80px;
+    }.picture_lightbox{
+        border: 2px solid red;
+        @include size-container(75%, 70vh)
+    }
+}

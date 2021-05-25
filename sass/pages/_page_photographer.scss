@@ -3,12 +3,14 @@
 }
 .info_photographer {
   @include size-container(90%, 300px);
-  @include flex(space-around, center);
+  @include flex(center, flex-start);
+  flex-direction: column;
   margin: auto;
+  position: relative;
   &__name {
     color: $txt-secondary;
-    font-size: 70px;
-    font-weight: normal;
+    font-size: 50px;
+    font-weight: 100;
     margin: 10px 30px;
   }
   &__country {
@@ -20,6 +22,11 @@
     color: $txt-bglight;
     margin: 10px 30px;
   }
+
+.profil_photographer{
+  @include flex(space-around, center);
+}
+
 }
 .tagofphotographer a {
   color: $txt-bgwhite;
@@ -27,15 +34,17 @@
 }
 
 .picture-profil {
-  @include size-container(200px, 200px);
+  @include size-container(180px, 180px);
   border-radius: 50%;
+  position: absolute;
+  top: 20%;
+  right: 0;
 }
 
 .work_photographer {
   @include size-container(98%, auto);
   margin: auto;
 }
-
 
 .form_organize{
   margin:0 0 20px 125px;
@@ -84,7 +93,7 @@ input:not(:focus):invalid, textarea:not(:focus):invalid{
   margin: 0;
   @include size-container(30%, 430px);
   img {
-    @include size-container(450px, 450px);
+    @include size-container(400px, 400px);
     object-fit: cover;
     object-position: center;
     border-radius: 5px;
@@ -97,6 +106,10 @@ input:not(:focus):invalid, textarea:not(:focus):invalid{
     @include flex(space-between, center);
     padding: 5px;
   }
+}
+
+.video{
+  @include size-container(400px,400px)
 }
 
 .like_and_price{

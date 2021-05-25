@@ -1,0 +1,104 @@
+@media screen and (max-width: 798px) {
+  .pages-header {
+    img {
+      padding-left: 25px;
+    }
+  }
+  .info_photographer {
+    @include size-container(100%, auto);
+    justify-content: flex-start;
+    margin-bottom: 50px;
+    &__name {
+      font-size: 40px;
+      margin: 5px 10px;
+    }
+    &__country {
+      font-size: 22px;
+      margin: 2px 10px;
+    }
+    &__slogan {
+      font-size: 20px;
+      margin: 5px 10px;
+    }
+  }
+
+  .picture-profil {
+    @include size-container(100px, 100px);
+    top: 0;
+  }
+
+  .contact_photographer {
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 10px 50px;
+    position: fixed;
+    left: 50%;
+    bottom: 5%;
+    transform: translateX(-60%);
+  }
+
+  .tagofphotographer a {
+    color: $txt-bgwhite;
+    font-size: 16px;
+    padding-left: 10px;
+  }
+
+  .form_organize {
+    margin: 20px 5px;
+  }
+
+  .organize,
+  option {
+    padding: 8px;
+    font-size: 18px;
+  }
+
+  .container-picture {
+    justify-content: flex-start;
+    grid-gap: 0;
+    img {
+      @include size-container(340px, 340px);
+    }
+    .describe-picture {
+      width: 330px;
+    }
+  }
+
+  .video {
+    @include size-container(340px, 340px);
+  }
+  .like_and_price {
+    display: none;
+  }
+  .modal_contact {
+    display: none;
+  }
+
+  .openModal {
+    display: initial;
+    position: fixed;
+    top: 0;
+    left: 0;
+    @include size-container(100%, 100vh);
+    @include flex(center, center);
+    background-color: $bg-etatchange;
+  }
+
+  .content_modal {
+    @include size-container(100%, 100vh);
+    margin: 0;
+    box-shadow: none;
+  }
+  .head_forms {
+    @include flex(space-between, center);
+    h1 {
+      font-size: 40px;
+    }
+  }
+
+  .senddata {
+    padding: 8px 40px;
+    margin: 20px auto;
+    border-radius: 5px;
+  }
+}

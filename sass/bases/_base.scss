@@ -2,6 +2,7 @@ body{
     @include size-container(95%, 100vh);
     padding: 0;
     box-sizing: border-box;
+    font-family: "tiresias_infofontregular" ;
 }
 
 *ul, li, a{
@@ -12,4 +13,14 @@ body{
 
 .hiddenElement{
     display: none;
+}
+
+
+@font-face {
+    font-family: 'tiresias_infofontregular';
+    src: url('../police/tiresias_infofont-webfont.woff2') format('woff2'),
+         url('../police/tiresias_infofont-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 }

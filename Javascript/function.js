@@ -17,3 +17,13 @@ export const hiddenElement = () => {
 export const showElement = () => {
   ELEMENTHTML.mainPageElement.classList.remove("hiddenElement");
 };
+
+export const openLightbox = () => {
+  ELEMENTHTML.lightBox.classList.add("show_lightbox");
+  hiddenElement();
+};
+
+export const closeLightbox = () => {
+  ELEMENTHTML.lightBox.classList.remove("show_lightbox");
+  showElement();
+};

@@ -7,7 +7,7 @@
     .index_header{
         justify-content: flex-start;
         flex-wrap: wrap;
-        margin: 10px 20px;
+        margin: 20px 10px;
     }
 
     .img_link{
@@ -29,10 +29,14 @@
     }
 
     .index_nav{
-        width: 100%;
         order: 3;
-        & span a{
-            text-align: center;
+        width: 100%;
+        ul{
+            flex-wrap: wrap;
+            padding: 0
+        }span a{
+            margin: 0;
+            font-size: 12px;     
         }
     }
 
