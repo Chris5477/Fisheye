@@ -13,7 +13,7 @@
 }
 
 .content_modal{
-    @include size-container(40%,90vh);
+    @include size-container(60%,90vh);
     margin: 50px auto;
     border-radius: 5px;
     box-shadow: 3px 3px 3px darken($color: $bg-etatchange, $amount: 10%),
@@ -22,7 +22,7 @@
     .head_forms{
         @include flex(space-between, center);
         h1{
-            font-size: 60px;
+            font-size: 50px;
             margin-left: 25px;
             font-weight: normal;
         }
@@ -48,8 +48,14 @@
         @include size-container(98%, 40px);
         border-radius: 5px;
         margin: auto;
+        font-size: 25px
     }
     textarea{
         @include size-container(98%, 160px);
+        font-size: 20px;
     }
+}
+
+h1.title--smaller{
+    font-size: 40px;
 }

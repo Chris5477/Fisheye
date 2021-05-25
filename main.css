@@ -75,7 +75,7 @@ body {
 }
 
 .content_modal {
-  width: 40%;
+  width: 60%;
   height: 90vh;
   margin: 50px auto;
   border-radius: 5px;
@@ -88,7 +88,7 @@ body {
   align-items: center;
 }
 .head_forms h1 {
-  font-size: 60px;
+  font-size: 50px;
   margin-left: 25px;
   font-weight: normal;
 }
@@ -118,10 +118,16 @@ body {
   height: 40px;
   border-radius: 5px;
   margin: auto;
+  font-size: 25px;
 }
 .formData textarea {
   width: 98%;
   height: 160px;
+  font-size: 20px;
+}
+
+h1.title--smaller {
+  font-size: 40px;
 }
 
 .close_modal {
@@ -174,6 +180,11 @@ body {
   position: absolute;
   top: 0;
   right: 1%;
+}
+
+.error {
+  color: #720000;
+  font-weight: bold;
 }
 
 .pages-header {
@@ -509,6 +520,10 @@ input:not(:focus):invalid, textarea:not(:focus):invalid {
 }
 .like_and_price p {
   display: inline;
+}
+
+.title--smaller {
+  font-size: 5px;
 }
 
 @media screen and (max-width: 798px) {

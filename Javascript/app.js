@@ -1,5 +1,6 @@
 import { ELEMENTHTML } from "./constant.js";
 import { openModal, closeModal, openLightbox, closeLightbox } from "./function.js";
+import { validData } from "./validForm.js";
 
 ELEMENTHTML.btnContact.addEventListener("click", openModal);
 ELEMENTHTML.btnCloseModal.addEventListener("click", closeModal);
@@ -18,4 +19,4 @@ fetch("./data.json")
     const marcel = data.media.filter((item) => item.photographerId == 195)
   });
   
-
+  ELEMENTHTML.formContact.addEventListener("submit", validData)

@@ -14,6 +14,15 @@ export const ELEMENTHTML = {
     btnCloseLightbox : document.querySelector(".close_lightbox"),
     pictureInLightbox : document.querySelector(".picture_lightbox"),
     btnPrevious : document.querySelector(".previous"),
-    btnNext : document.querySelector(".next")
+    btnNext : document.querySelector(".next"),
+    formContact : document.querySelector(".forms_photographer"),
+    input : [...document.querySelectorAll("input")],
+    message : document.querySelector("textarea"),
+    boxData : [...document.querySelectorAll(".formData")]
+}
+
+export const getMsg = {
+    0 : { msg : "Ce champs est obligatoire et doit contenir 2 caractères minimum"},
+    1 : { msg : "Succès de l'envoi de votre message"}
 }
 

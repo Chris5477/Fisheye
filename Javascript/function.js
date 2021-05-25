@@ -10,6 +10,12 @@ export const closeModal = () => {
   showElement();
 };
 
+export const informUser = (paragraphe, msg, container) => {
+paragraphe.textContent = msg;
+paragraphe.classList.add("error");
+container.appendChild(paragraphe);
+}
+
 export const hiddenElement = () => {
   ELEMENTHTML.mainPageElement.classList.add("hiddenElement");
 };
