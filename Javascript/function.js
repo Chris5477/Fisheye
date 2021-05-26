@@ -33,3 +33,4 @@ export const closeLightbox = () => {
   ELEMENTHTML.lightBox.classList.remove("show_lightbox");
   showElement();
 };
+

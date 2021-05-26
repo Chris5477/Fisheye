@@ -1,5 +1,5 @@
 import { ELEMENTHTML } from "./constant.js";
-let photographers;
+
 
 fetch("./data.json")
   .then((res) => res.json())
@@ -20,5 +20,14 @@ fetch("./data.json")
     ELEMENTHTML.price.forEach((item, key) => {
       item.textContent = photographers[key].price + "/jour";
     });
+     const array = []
     
+     photographers.map( item => array.push(item.tags) )
+     const arrayTags = array.flat();
+    for (const val in arrayTags) {
+      ELEMENTHTML.tags[val].textContent = arrayTags[val]
+    }
+
   });
+
+  

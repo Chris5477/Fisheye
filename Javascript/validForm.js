@@ -15,12 +15,12 @@ export const validData = (e) => {
         }
     })
         if (!message.value || message.value.length < 20){
-            informUser(messageForm, getMsg[0].msg, ELEMENTHTML.boxData[3])
+            informUser(messageForm, getMsg[1].msg, ELEMENTHTML.boxData[3])
             isValid = false
         }
 
         if(isValid){
             e.preventDefault();
-            alert(getMsg[1].msg);
+            alert(getMsg[2].msg);
         }
 } 

@@ -321,6 +321,10 @@ h1.title--smaller {
   margin: 0;
 }
 
+.tag {
+  color: #901c1c;
+}
+
 .modifh2 {
   font-size: 25px;
 }
