@@ -1,6 +1,5 @@
 import { ELEMENTHTML } from "./constant.js";
 
-
 fetch("./data.json")
   .then((res) => res.json())
   .then((data) => {
@@ -20,14 +19,25 @@ fetch("./data.json")
     ELEMENTHTML.price.forEach((item, key) => {
       item.textContent = photographers[key].price + "/jour";
     });
-     const array = []
-    
-     photographers.map( item => array.push(item.tags) )
-     const arrayTags = array.flat();
+    const array = [];
+
+    photographers.map((item) => array.push(item.tags));
+    const arrayTags = array.flat();
+
     for (const val in arrayTags) {
-      ELEMENTHTML.tags[val].textContent = arrayTags[val]
+      ELEMENTHTML.tags[val].textContent = `#${arrayTags[val]}`;
     }
 
+    ELEMENTHTML.tagNavigation.forEach((el) =>
+      el.addEventListener("click", () => {
+        const element = el.innerHTML.substring(1).toLowerCase();
+        for (let index in array) {
+          ELEMENTHTML.worker[index].style.display = "initial";
+          if (!array[index].includes(element)) {
+            ELEMENTHTML.worker[index].style.display = "none";
+            ELEMENTHTML.worker[index].style.textAlign = "center";
+          }
+        }
+      })
+    );
   });
-
-  

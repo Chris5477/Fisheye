@@ -1,7 +1,7 @@
 export const ELEMENTHTML = {
+    worker : [...document.querySelectorAll(".photographer")],
     tagNavigation : [...document.querySelectorAll(".index_nav a")],
     namePhotographer : [...document.querySelectorAll(".name_photographer")],
-    box : document.querySelector(".photographer__tag"),
     country : [...document.querySelectorAll(".moreinfo__country")],
     slogan : [...document.querySelectorAll(".moreinfo__slogan")],
     price : [...document.querySelectorAll(".moreinfo__price")],
