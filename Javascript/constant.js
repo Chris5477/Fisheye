@@ -1,4 +1,5 @@
 export const ELEMENTHTML = {
+    title : document.querySelector("head title"),
     worker : [...document.querySelectorAll(".photographer")],
     tagNavigation : [...document.querySelectorAll(".index_nav a")],
     namePhotographer : [...document.querySelectorAll(".name_photographer")],
@@ -6,21 +7,36 @@ export const ELEMENTHTML = {
     slogan : [...document.querySelectorAll(".moreinfo__slogan")],
     price : [...document.querySelectorAll(".moreinfo__price")],
     tags : [...document.querySelectorAll(".tag")],
-    btnContact : document.querySelector(".contact_photographer"),
-    modal : document.querySelector(".modal_contact"),
-    btnCloseModal : document.querySelector(".close_modal"),
     mainPageElement : document.querySelector(".pages-main"),
-    bigPicture :[...document.querySelectorAll(".picture img")],
+    allPicturePhotographer :[...document.querySelectorAll(".picture img")],
     photo : document.querySelector('.photo'),
+    nameMember : document.querySelector(".profil_photographer__name"),
+    localisationMember : document.querySelector(".info_photographer__country"), 
+    sloganMember : document.querySelector(".info_photographer__slogan"),
+    tagsMember : [...document.querySelectorAll(".tagofphotographer")]
+}
+
+export const ELEMENTMODAL = {
+    modal : document.querySelector(".modal_contact"),
     lightBox : document.querySelector(".lightbox"),
+}
+
+export const ELEMENTFORM = {
+    formContact : document.querySelector(".forms_photographer"),
+    input : [...document.querySelectorAll("input")],
+    message : document.querySelector("textarea"),
+    boxData : [...document.querySelectorAll(".formData")],
+
+}
+
+export const ELEMENTBTN = {
+    btnContact : document.querySelector(".contact_photographer"),
+    btnCloseModal : document.querySelector(".close_modal"),
     btnOpenLightbox : document.querySelector(".open_lightbox"),
     btnCloseLightbox : document.querySelector(".close_lightbox"),
     btnPrevious : document.querySelector(".previous"),
     btnNext : document.querySelector(".next"),
-    formContact : document.querySelector(".forms_photographer"),
-    input : [...document.querySelectorAll("input")],
-    message : document.querySelector("textarea"),
-    boxData : [...document.querySelectorAll(".formData")]
+    
 }
 
 export const getMsg = {

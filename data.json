@@ -96,7 +96,7 @@
         "id": 9275938,
         "photographerId": 82,
         "title": "Wedding Gazebo",
-        "image": "Event-_WeddingGazebo.jpg",
+        "image": "Event_WeddingGazebo.jpg",
         "tags": ["events"],
         "likes": 69,
         "date": "2018-02-22",
@@ -171,6 +171,16 @@
         "tags": ["sport"],
         "likes": 52,
         "date": "2013-02-30",
+        "price": 70
+      },
+      {
+        "id": 73412953,
+        "photographerId": 925,
+        "title": "Swimmer Butterfly",
+        "image": "Sport_Butterfly.jpg",
+        "tags": ["sport"],
+        "likes": 102,
+        "date": "2012-02-30",
         "price": 70
       },
       {
@@ -272,6 +282,16 @@
         "tags": ["travel"],
         "likes": 101,
         "date": "2017-04-03",
+        "price": 45
+      },
+      {
+        "id": 34514553,
+        "photographerId": 527,
+        "title": "On the Road",
+        "image": "Travel_On_the_Road.jpg",
+        "tags": ["travel"],
+        "likes": 62,
+        "date": "2017-02-21",
         "price": 45
       },
       {

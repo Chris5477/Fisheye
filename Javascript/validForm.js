@@ -1,4 +1,4 @@
-import { ELEMENTHTML , getMsg } from "./constant.js";
+import { ELEMENTHTML ,ELEMENTFORM, getMsg } from "./constant.js";
 import { informUser } from "./function.js"
 
 const messageForm = document.createElement("p");
@@ -8,14 +8,14 @@ export const validData = (e) => {
     e.preventDefault();
     let isValid = true;
 
-    ELEMENTHTML.input.forEach((item,key) => {
+    ELEMENTFORM.input.forEach((item,key) => {
         if (!item.value || item.value.length < 2){
-            informUser(messageForm, getMsg[0].msg, ELEMENTHTML.boxData[key])
+            informUser(messageForm, getMsg[0].msg, ELEMENTFORM.boxData[key])
             isValid = false
         }
     })
         if (!message.value || message.value.length < 20){
-            informUser(messageForm, getMsg[1].msg, ELEMENTHTML.boxData[3])
+            informUser(messageForm, getMsg[1].msg, ELEMENTFORM.boxData[3])
             isValid = false
         }
 

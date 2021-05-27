@@ -1,12 +1,12 @@
-import { ELEMENTHTML } from "./constant.js";
+import { ELEMENTHTML, ELEMENTMODAL } from "./constant.js";
 
 export const openModal = () => {
-  ELEMENTHTML.modal.classList.add("openModal");
+  ELEMENTMODAL.modal.classList.add("openModal");
   hiddenElement();
 };
 
 export const closeModal = () => {
-  ELEMENTHTML.modal.classList.remove("openModal");
+  ELEMENTMODAL.modal.classList.remove("openModal");
   showElement();
 };
 
@@ -25,12 +25,24 @@ export const showElement = () => {
 };
 
 export const openLightbox = () => {
-  ELEMENTHTML.lightBox.classList.add("show_lightbox");
+  ELEMENTMODAL.lightBox.classList.add("show_lightbox");
   hiddenElement();
 };
 
 export const closeLightbox = () => {
-  ELEMENTHTML.lightBox.classList.remove("show_lightbox");
+  ELEMENTMODAL.lightBox.classList.remove("show_lightbox");
   showElement();
 };
 
+let key = 0;
+
+export const previousPicture = (key) => {
+  key--
+  ELEMENTHTML.photo.setAttribute("src", mimiPicture[0])
+}
+
+
+export const nextPicture = (key) => {
+  key++
+  ELEMENTHTML.photo.setAttribute("src", mimiPicture[key])
+}
