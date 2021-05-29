@@ -39,7 +39,7 @@ export const ELEMENTBTN = {
     
 }
 
-export const getMsg = {
+export const GETMSG = {
     0 : { msg : "Ce champs est obligatoire et doit contenir 2 caractères minimum"},
     1: { msg : "Ce champs est obligatoire et doit contenir 20 caractères minimum"},
     2 : { msg : "Succès de l'envoi de votre message"}
