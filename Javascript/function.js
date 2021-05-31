@@ -55,3 +55,4 @@ export const closeLightbox = () => {
   ELEMENTMODAL.lightBox.classList.remove("show_lightbox");
   showElement();
 };
+

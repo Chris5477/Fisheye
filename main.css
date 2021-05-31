@@ -192,6 +192,12 @@ h1.title--smaller {
   font-weight: bold;
 }
 
+.fa-heart {
+  width: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .pages-header {
   width: 95%;
   height: 10vh;
@@ -476,6 +482,11 @@ input:not(:focus):invalid, textarea:not(:focus):invalid {
   font-weight: bold;
 }
 
+.organize:hover, .organize:focus {
+  background-color: #db8776;
+  color: black;
+}
+
 .container-picture {
   width: 100%;
   height: auto;
@@ -487,8 +498,6 @@ input:not(:focus):invalid, textarea:not(:focus):invalid {
 
 .picture {
   margin: 0;
-  width: 30%;
-  height: 430px;
 }
 .picture img {
   width: 400px;
@@ -501,11 +510,12 @@ input:not(:focus):invalid, textarea:not(:focus):invalid {
   color: #901c1c;
   font-weight: 500;
   font: 25px;
-  width: 390px;
+  width: 100%;
   height: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: row-reverse;
   padding: 5px;
 }
 

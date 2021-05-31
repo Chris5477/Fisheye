@@ -9,11 +9,13 @@ export const ELEMENTHTML = {
     tags : [...document.querySelectorAll(".tag")],
     mainPageElement : document.querySelector(".pages-main"),
     allPicturePhotographer :[...document.querySelectorAll(".picture img")],
+    legend : [...document.querySelectorAll(".describe-picture")],
     photo : document.querySelector('.photo'),
     nameMember : document.querySelector(".profil_photographer__name"),
     localisationMember : document.querySelector(".info_photographer__country"), 
     sloganMember : document.querySelector(".info_photographer__slogan"),
-    tagsMember : [...document.querySelectorAll(".tagofphotographer")]
+    tagsMember : [...document.querySelectorAll(".tagofphotographer")],
+    like : [...document.querySelectorAll(".fa-heart")]
 }
 
 export const ELEMENTMODAL = {
@@ -26,6 +28,7 @@ export const ELEMENTFORM = {
     input : [...document.querySelectorAll("input")],
     message : document.querySelector("textarea"),
     boxData : [...document.querySelectorAll(".formData")],
+    select : document.querySelector("select")
 
 }
 

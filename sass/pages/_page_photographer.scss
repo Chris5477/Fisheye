@@ -81,6 +81,11 @@ input:not(:focus):invalid, textarea:not(:focus):invalid{
   font-weight: bold;
 }
 
+.organize:hover , .organize:focus{
+  background-color: $bg-etatchange;
+  color: $txt-etatchange;
+}
+
 
 .container-picture {
   @include size-container(100%, auto);
@@ -92,7 +97,6 @@ input:not(:focus):invalid, textarea:not(:focus):invalid{
 
 .picture {
   margin: 0;
-  @include size-container(30%, 430px);
   img {
     @include size-container(400px, 400px);
     object-fit: cover;
@@ -103,9 +107,11 @@ input:not(:focus):invalid, textarea:not(:focus):invalid{
     color: $txt-bgwhite;
     font-weight: 500;
     font: 25px;
-    @include size-container(390px, auto);
+    @include size-container(100%, auto);
     @include flex(space-between, center);
+    flex-direction: row-reverse;
     padding: 5px;
+
   }
 }
 
