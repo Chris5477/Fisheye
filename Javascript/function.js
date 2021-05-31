@@ -27,12 +27,16 @@ export const showElement = () => {
 let i = 0;
 
 export const previousPicture = (member) => {
-  i--;
-  i === 0 ? ELEMENTBTN.btnPrevious.setAttribute("disabled", "true") : ELEMENTHTML.photo.setAttribute("src", member[i]);
+
+  console.log(i)
+  ELEMENTBTN.btnNext.removeAttribute("disabled");
+ return  i == 0 ? ELEMENTBTN.btnPrevious.setAttribute("disabled", "true") : ELEMENTHTML.photo.setAttribute("src", member[i--]);
 };
 export const nextPicture = (member) => {
-  i++;
-  i < member.length ? ELEMENTHTML.photo.setAttribute("src", member[i]) : ELEMENTBTN.btnNext.setAttribute("disabled", "true");
+ 
+  console.log(i)
+  ELEMENTBTN.btnPrevious.removeAttribute("disabled")
+  return i < member.length ? ELEMENTHTML.photo.setAttribute("src", member[i++]) : ELEMENTBTN.btnNext.setAttribute("disabled", "true");
 };
 
 export const keyboardLightbox = (member) => {
@@ -40,10 +44,10 @@ export const keyboardLightbox = (member) => {
  
   if (trigger === "ArrowLeft") {
     i--;
-    i === 0 ? ELEMENTBTN.btnPrevious.setAttribute("disabled", "true") : ELEMENTHTML.photo.setAttribute("src", member[i]);
+    i === 0 ? ELEMENTBTN.btnPrevious.setAttribute("disabled", "true") : ELEMENTHTML.photo.setAttribute("src", member[i++]);
   } else if (trigger === "ArrowRight") {
     i++;
-    i < member.length ? ELEMENTHTML.photo.setAttribute("src", member[i]) : ELEMENTBTN.btnNext.setAttribute("disabled", "true");
+    i <  member.length  ? ELEMENTHTML.photo.setAttribute("src", member[i]) : ELEMENTBTN.btnNext.setAttribute("disabled", "true");
   }
 
   if(trigger ==="Escape"){

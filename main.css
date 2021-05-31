@@ -157,6 +157,7 @@ h1.title--smaller {
 }
 
 .content_lightbox {
+  position: relative;
   border: 2px solid black;
   width: 90%;
   height: 80vh;
@@ -165,26 +166,38 @@ h1.title--smaller {
   align-items: center;
 }
 .content_lightbox .btn {
-  padding: 50px;
-  font-size: 80px;
-}
-.content_lightbox .picture_lightbox {
-  border: 2px solid red;
-  width: 75%;
-  height: 70vh;
+  padding: 30px;
+  font-size: 50px;
 }
 
 .photo {
-  height: 600px;
+  max-height: 700px;
+  width: 100%;
   object-fit: contain;
 }
 
+@media screen and (max-width: 798px) {
+  .content_lightbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .content_lightbox .photo {
+    width: 90%;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+  }
+}
 .close_lightbox {
-  padding: 50px;
+  padding: 30px;
   font-size: 50px;
   position: absolute;
-  top: 0;
-  right: 1%;
+  top: 10%;
+  right: 5%;
+  z-index: 1;
 }
 
 .error {

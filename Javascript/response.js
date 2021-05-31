@@ -3,6 +3,7 @@ import { previousPicture, nextPicture, keyboardLightbox } from "./function.js";
 export const responsePromise = (data) => {
   const objPhotographer = data.photographers;
   const objMedia = data.media;
+  let i = 0;
 
   const dataProfil = (key) => {
     ELEMENTHTML.nameMember.textContent = objPhotographer[key].name;
@@ -24,7 +25,7 @@ export const responsePromise = (data) => {
         title: item.title,
         date: item.date,
         likes: item.likes,
-        image: "../ressources/" +photographerName+"/" + item.image
+        image: "ressources/" +photographerName+"/" + item.image
       });
     });
   };
