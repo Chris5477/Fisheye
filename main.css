@@ -77,6 +77,7 @@ body {
 .content_modal {
   width: 60%;
   height: 90vh;
+  position: relative;
   margin: 50px auto;
   border-radius: 5px;
   box-shadow: 3px 3px 3px #d0644e, -3px -3px 3px #e6aa9e;
@@ -124,12 +125,27 @@ body {
   width: 98%;
   height: 160px;
   font-size: 20px;
+  border: 5px;
 }
 
 h1.title--smaller {
   font-size: 40px;
 }
 
+@media screen and (max-width: 798px) {
+  .head_forms h1 {
+    font-size: 20px;
+    margin: 10px 0 10px 10px;
+  }
+
+  h1.title--smaller {
+    font-size: 15px;
+  }
+
+  .formData {
+    margin: 5px auto;
+  }
+}
 .close_modal {
   background-color: #db8776;
   color: #ffffff;
@@ -137,7 +153,10 @@ h1.title--smaller {
   border: transparent;
   font-size: 60px;
   font-weight: 200;
-  margin-right: 25px;
+  position: absolute;
+  top: 1%;
+  right: 2%;
+  cursor: pointer;
 }
 
 .lightbox {
@@ -157,9 +176,7 @@ h1.title--smaller {
 }
 
 .content_lightbox {
-  position: relative;
-  border: 2px solid black;
-  width: 90%;
+  width: 100%;
   height: 80vh;
   display: flex;
   justify-content: space-between;
@@ -169,35 +186,47 @@ h1.title--smaller {
   padding: 30px;
   font-size: 50px;
 }
+.content_lightbox .btn .fa-chevron-left, .content_lightbox .btn .fa-chevron-right {
+  color: #901c1c;
+}
 
 .photo {
-  max-height: 700px;
+  height: 90vh;
   width: 100%;
-  object-fit: contain;
+  object-fit: scale-down;
 }
 
 @media screen and (max-width: 798px) {
   .content_lightbox {
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
   }
-  .content_lightbox .photo {
-    width: 90%;
-    height: 500px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -55%);
+  .content_lightbox .btn {
+    padding: 15px;
+    font-size: 20px;
+  }
+  .content_lightbox .btn .fa-chevron-left, .content_lightbox .btn .fa-chevron-right {
+    color: #901c1c;
+  }
+
+  .photo {
+    max-height: none;
+    height: 80vh;
+    width: 100%;
+    object-fit: contain;
   }
 }
 .close_lightbox {
   padding: 30px;
   font-size: 50px;
   position: absolute;
-  top: 10%;
-  right: 5%;
+  top: 3%;
+  right: 3%;
   z-index: 1;
+  color: #901c1c;
 }
 
 .error {
@@ -441,7 +470,7 @@ h1.title--smaller {
   margin: 10px 30px;
 }
 
-.tagofphotographer a {
+.tagofphotographer {
   color: #901c1c;
   padding-left: 30px;
 }
@@ -511,6 +540,7 @@ input:not(:focus):invalid, textarea:not(:focus):invalid {
 
 .picture {
   margin: 0;
+  width: 90%;
 }
 .picture img {
   width: 400px;
@@ -555,6 +585,10 @@ input:not(:focus):invalid, textarea:not(:focus):invalid {
 }
 
 @media screen and (max-width: 798px) {
+  .pages-header {
+    width: 100%;
+    height: 10vh;
+  }
   .pages-header img {
     padding-left: 25px;
   }
@@ -600,14 +634,14 @@ input:not(:focus):invalid, textarea:not(:focus):invalid {
     transform: translateX(-60%);
   }
 
-  .tagofphotographer a {
+  .tagofphotographer {
     color: #901c1c;
     font-size: 16px;
     padding-left: 10px;
   }
 
   .form_organize {
-    margin: 20px 5px;
+    margin: 20px;
   }
 
   .organize,
@@ -617,20 +651,26 @@ option {
   }
 
   .container-picture {
-    justify-content: flex-start;
-    grid-gap: 0;
+    display: block;
+    width: 100%;
+    margin: auto;
+  }
+  .container-picture .picture {
+    margin: 15px auto;
+    object-fit: cover;
   }
   .container-picture img {
-    width: 340px;
-    height: 340px;
+    width: 100%;
+    height: 250px;
   }
   .container-picture .describe-picture {
-    width: 330px;
+    width: 100%;
   }
 
   .video {
-    width: 340px;
+    width: 90%;
     height: 340px;
+    margin-left: 20px;
   }
 
   .like_and_price {

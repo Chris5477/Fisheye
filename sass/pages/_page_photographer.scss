@@ -29,7 +29,7 @@
   }
 }
 
-.tagofphotographer a {
+.tagofphotographer {
   color: $txt-bgwhite;
   padding-left: 30px;
 }
@@ -97,6 +97,7 @@ input:not(:focus):invalid, textarea:not(:focus):invalid{
 
 .picture {
   margin: 0;
+  width: 90%;
   img {
     @include size-container(400px, 400px);
     object-fit: cover;

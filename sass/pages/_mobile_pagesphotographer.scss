@@ -1,9 +1,11 @@
 @media screen and (max-width: 798px) {
-  .pages-header {
-    img {
-      padding-left: 25px;
+  .pages-header{
+    @include size-container(100%,10vh);
+   
+    img{
+        padding-left: 25px;
     }
-  }
+}
 
   .profil_photographer{
     width: 100%;
@@ -44,14 +46,14 @@
     transform: translateX(-60%);
   }
 
-  .tagofphotographer a {
+  .tagofphotographer {
     color: $txt-bgwhite;
     font-size: 16px;
     padding-left: 10px;
   }
 
   .form_organize {
-    margin: 20px 5px;
+    margin: 20px;
   }
 
   .organize,
@@ -61,18 +63,24 @@
   }
 
   .container-picture {
-    justify-content: flex-start;
-    grid-gap: 0;
+    display: block;
+    width: 100%;
+    margin: auto;
+    .picture{
+      margin: 15px auto;
+      object-fit: cover;
+        }
     img {
-      @include size-container(340px, 340px);
+      @include size-container(100%, 250px);
     }
     .describe-picture {
-      width: 330px;
+      width: 100%;
     }
   }
 
   .video {
-    @include size-container(340px, 340px);
+    @include size-container(90%, 340px);
+    margin-left: 20px;
   }
   .like_and_price {
     display: none;

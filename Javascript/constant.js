@@ -7,6 +7,7 @@ export const ELEMENTHTML = {
     slogan : [...document.querySelectorAll(".moreinfo__slogan")],
     price : [...document.querySelectorAll(".moreinfo__price")],
     tags : [...document.querySelectorAll(".tag")],
+    header : document.querySelector(".pages-header"),
     mainPageElement : document.querySelector(".pages-main"),
     allPicturePhotographer :[...document.querySelectorAll(".picture img")],
     legend : [...document.querySelectorAll(".describe-picture")],

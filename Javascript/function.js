@@ -18,19 +18,22 @@ export const informUser = (paragraphe, msg, container) => {
 
 export const hiddenElement = () => {
   ELEMENTHTML.mainPageElement.classList.add("hiddenElement");
+  ELEMENTHTML.header.className="hiddenElement"
+  
 };
 
 export const showElement = () => {
   ELEMENTHTML.mainPageElement.classList.remove("hiddenElement");
-};
+  ELEMENTHTML.header.className="pages-header"
+}
 
 let i = 0;
 
 export const previousPicture = (member) => {
 
-  console.log(i)
+  console.log(member)
   ELEMENTBTN.btnNext.removeAttribute("disabled");
- return  i == 0 ? ELEMENTBTN.btnPrevious.setAttribute("disabled", "true") : ELEMENTHTML.photo.setAttribute("src", member[i--]);
+ return  i == 0 ? ELEMENTBTN.btnPrevious.setAttribute("disabled", "true", "src",member[0]) : ELEMENTHTML.photo.setAttribute("src", member[i--])
 };
 export const nextPicture = (member) => {
  

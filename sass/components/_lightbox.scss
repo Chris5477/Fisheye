@@ -1,4 +1,4 @@
-.lightbox {
+.lightbox{
   display: none;
 }
 
@@ -12,32 +12,41 @@
 }
 
 .content_lightbox {
-  position: relative;
-  border: 2px solid black;
-  @include size-container(90%, 80vh);
+  @include size-container(100%, 80vh);
   @include flex(space-between, center);
   .btn {
     padding: 30px;
     font-size: 50px;
+    .fa-chevron-left , .fa-chevron-right{
+      color: $txt-bgwhite;
+    }
   }
 }
 
 .photo {
-  max-height: 700px;
+  height: 90vh;
   width: 100%;
-  object-fit: contain;
+  object-fit: scale-down;
 }
 
 @media screen and (max-width: 798px) {
+  
   .content_lightbox {
-    @include flex(space-between, flex-end);
-
-    .photo {
-        @include size-container(90%,500px);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-55%);
+    @include size-container(100%, 100%);
+    @include flex(space-between, center);
+    .btn {
+      padding: 15px;
+      font-size: 20px;
+      .fa-chevron-left , .fa-chevron-right{
+        color: $txt-bgwhite;
+      }
     }
   }
+  .photo {
+    max-height: none;
+    height: 80vh;
+    width: 100%;
+    object-fit: contain;
+  }
+    
 }
