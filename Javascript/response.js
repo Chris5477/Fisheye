@@ -25,19 +25,28 @@ export const responsePromise = (data) => {
         title: item.title,
         date: item.date,
         likes: item.likes,
+        description : item.description,
         image: "ressources/" +photographerName+"/" + item.image
       });
     });
   };
-
   const onlyPicture = (arr) => arr.map((item) => item.image);
 
   const showPicture = (arr) => {
     for (let key in arr) {
-        ELEMENTHTML.allPicturePhotographer[key].setAttribute("src", arr[key].image);
-        ELEMENTHTML.legend[key].innerHTML += arr[key].title + arr[key].likes;
+      ELEMENTHTML.allPicturePhotographer[key].setAttribute("src", arr[key].image);
+      ELEMENTHTML.allPicturePhotographer[key].setAttribute("aria-label", arr[key].description)
+      ELEMENTHTML.legend[key].innerHTML += arr[key].title + arr[key].likes;
     }
   };
+  
+  const showVideo = (photographerName,arr) => {
+    const onlyVideo =arr.filter(item => item.video)
+    onlyVideo.push({description : onlyVideo[0].description})
+    ELEMENTHTML.video.setAttribute("src","ressources/"+photographerName+"/"+onlyVideo[0].video)
+    ELEMENTHTML.video.setAttribute("aria-label", onlyVideo[1].description)
+  }
+  
 
   const sortPicture = () => {
     if (ELEMENTFORM.select.value === "popularite") {
@@ -83,6 +92,7 @@ export const responsePromise = (data) => {
     ELEMENTBTN.btnPrevious.addEventListener("click", () => previousPicture(mimiPicture));
     ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture(mimiPicture));
     document.addEventListener("keydown", (event) => keyboardLightbox(mimiPicture));
+    showVideo("Mimi",mimi);
   }
 
   if (ELEMENTHTML.title.innerHTML == "Ellie-Rose Wilkens | FishEye") {
@@ -95,6 +105,8 @@ export const responsePromise = (data) => {
     ELEMENTBTN.btnPrevious.addEventListener("click", () => previousPicture(elliePicture));
     ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture(elliePicture));
     document.addEventListener("keydown", (event) => keyboardLightbox(elliePicture));
+    showVideo("Ellie_Rose", ellie)
+    
   }
 
   if (ELEMENTHTML.title.innerHTML == "Tracy Galindo | FishEye") {
@@ -107,6 +119,7 @@ export const responsePromise = (data) => {
     ELEMENTBTN.btnPrevious.addEventListener("click", () => previousPicture(tracyPicture));
     ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture(tracyPicture));
     document.addEventListener("keydown", (event) => keyboardLightbox(tracyPicture));
+    showVideo("Tracy", tracy)
   }
 
   if (ELEMENTHTML.title.innerHTML == "Nabeel Bradford | FishEye") {
@@ -119,6 +132,7 @@ export const responsePromise = (data) => {
     ELEMENTBTN.btnPrevious.addEventListener("click", () => previousPicture(nabeelPicture));
     ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture(nabeelPicture));
     document.addEventListener("keydown", (event) => keyboardLightbox(nabeelPicture));
+    showVideo("Nabeel", nabeel)
   }
 
   if (ELEMENTHTML.title.innerHTML == "Rhode Dubois | FishEye") {
@@ -131,6 +145,7 @@ export const responsePromise = (data) => {
     ELEMENTBTN.btnPrevious.addEventListener("click", () => previousPicture(rhodePicture));
     ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture(rhodePicture));
     document.addEventListener("keydown", (event) => keyboardLightbox(rhodePicture));
+    showVideo("Rhode", rhode)
   }
 
   if (ELEMENTHTML.title.innerHTML == "Marcel Nikolic | FishEye") {
@@ -143,6 +158,6 @@ export const responsePromise = (data) => {
     ELEMENTBTN.btnPrevious.addEventListener("click", () => previousPicture(marcelPicture));
     ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture(marcelPicture));
     document.addEventListener("keydown", (event) => keyboardLightbox(marcelPicture));
+    showVideo("Marcel", marcel)
   }
 };
-
