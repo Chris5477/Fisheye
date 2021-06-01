@@ -3,7 +3,10 @@ import { ELEMENTHTML } from "./constant.js";
 fetch("./data.json")
   .then((res) => res.json())
   .then((data) => {
+
     const photographers = data.photographers;
+    
+
     ELEMENTHTML.namePhotographer.forEach((item, key) => {
       item.textContent = photographers[key].name;
     });

@@ -16,6 +16,7 @@ export const ELEMENTHTML = {
     localisationMember : document.querySelector(".info_photographer__country"), 
     sloganMember : document.querySelector(".info_photographer__slogan"),
     tagsMember : [...document.querySelectorAll(".tagofphotographer")],
+    pricePhotographer : document.querySelector(".price"),
     like : [...document.querySelectorAll(".fa-heart")],
     video : document.querySelector("video")
 }
