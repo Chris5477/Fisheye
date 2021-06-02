@@ -18,10 +18,11 @@ export const sortJson = (obj, id) => obj.filter((item) => item.photographerId ==
 
 // fonction  pour créer un objet contenant toutes les informations d'images
 
-export const utilData = (member, photographerName, arr) => {
+export const utilData = (member, photographerName) => {
+  const array = []
   const noVideo = member.filter((item) => item.image != undefined);
   noVideo.forEach((item) => {
-    arr.push({
+    array.push({
       title: item.title,
       date: item.date,
       likes: item.likes,
@@ -29,6 +30,7 @@ export const utilData = (member, photographerName, arr) => {
       image: "ressources/" + photographerName + "/" + item.image,
     });
   });
+  return array
 };
 
 // fonction pour n'avoir que les images
@@ -38,11 +40,12 @@ export const onlyPicture = (arr) => arr.map((item) => item.image);
 // fonction pour afficher les images , donner une description audio et une legende
 
 export const showPicture = (arr) => {
-  for (let key in arr) {
-    ELEMENTHTML.allPicturePhotographer[key].setAttribute("src", arr[key].image);
-    ELEMENTHTML.allPicturePhotographer[key].setAttribute("aria-label", arr[key].description);
-    ELEMENTHTML.legend[key].innerHTML += arr[key].title + arr[key].likes;
-  }
+  ELEMENTHTML.legend.forEach((item,key) => item.innerHTML = arr[key].title);
+  ELEMENTHTML.liked.forEach((item,key) => item.innerHTML = " " + arr[key].likes);
+  ELEMENTHTML.allPicturePhotographer.map((item,key) => {
+    item.setAttribute("src",arr[key].image)
+    item.setAttribute("aria-label", arr[key].description)
+  })
 };
 
 //fonction pour recuperer un array avec les videos et les afficher
@@ -65,32 +68,14 @@ export const sortPicture = (arr) => {
     showPicture(arr);
   } else if (ELEMENTFORM.select.value === "titre") {
     arr.sort((a, b) => {
-      if (a.title < b.title) {
-        return -1;
-      } else if (a.title == b.title) {
-        return 0;
-      } else {
-        return +1;
-      }
+      return a.title.localeCompare(b.title)
     });
     showPicture(arr);
   }
 };
-// fonction permettant d'ajouter un like
-
-// export const likePicture = (member) =>
-//   member.map((item, key) => {
-//     let numberLike = item.likes;
-//     ELEMENTHTML.like[key].innerHTML ="dfdfdf " + Number(numberLike);
-//     const moreLike = () => {
-//       console.log("ok")
-//       return (ELEMENTHTML.like[key].innerHTML = Number(numberLike++));
-//     };
-
-//     ELEMENTHTML.like.forEach((el) => el.addEventListener("click", moreLike));
-//   });
 
 
+//fonction permettant d'ajouter un like
 
 //fonction d'ouverture de modal
 

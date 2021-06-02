@@ -17,6 +17,7 @@ export const ELEMENTHTML = {
     sloganMember : document.querySelector(".info_photographer__slogan"),
     tagsMember : [...document.querySelectorAll(".tagofphotographer")],
     pricePhotographer : document.querySelector(".price"),
+    liked : [...document.querySelectorAll(".count_like")],
     like : [...document.querySelectorAll(".fa-heart")],
     video : document.querySelector("video")
 }

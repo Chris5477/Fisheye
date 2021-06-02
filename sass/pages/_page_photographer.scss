@@ -2,9 +2,9 @@
   @include size-container(90%, auto);
 }
 
-.profil_photographer{
+.profil_photographer {
   @include flex(flex-start, center);
-  @include size-container(60%,auto);
+  @include size-container(60%, auto);
   margin-left: 100px;
   &__name {
     color: $txt-secondary;
@@ -15,7 +15,7 @@
 }
 
 .info_photographer {
-  @include size-container(90%,200px);
+  @include size-container(90%, 200px);
   position: relative;
   margin-left: 100px;
   &__country {
@@ -47,45 +47,47 @@
   margin: auto;
 }
 
-.form_organize{
-  margin:0 0 20px 125px;
-  & label{
+.form_organize {
+  margin: 0 0 20px 125px;
+  & label {
     font-weight: bold;
     font-size: 22px;
   }
 }
 
-input:not(:focus):invalid, textarea:not(:focus):invalid{
+input:not(:focus):invalid,
+textarea:not(:focus):invalid {
   border: 5px solid red;
   animation: errorData 0.5s ease-in-out 2 alternate;
 }
-@keyframes errorData{
+@keyframes errorData {
   0% {
     transform: translateX(0px);
   }
-  50%{
+  50% {
     transform: translateX(-3px);
   }
-  100%{
+  100% {
     transform: translateX(3px);
   }
 }
 
-.organize , option{
+.organize,
+option {
   margin-left: 20px;
   padding: 15px;
   background-color: $bg-primary;
-  color :$txt-primary;
+  color: $txt-primary;
   border-radius: 5px;
   font-size: 22px;
   font-weight: bold;
 }
 
-.organize:hover , .organize:focus{
+.organize:hover,
+.organize:focus {
   background-color: $bg-etatchange;
   color: $txt-etatchange;
 }
-
 
 .container-picture {
   @include size-container(100%, auto);
@@ -97,41 +99,40 @@ input:not(:focus):invalid, textarea:not(:focus):invalid{
 
 .picture {
   margin: 0;
-  width: 90%;
+  width: 100%;
   img {
     @include size-container(400px, 400px);
     object-fit: cover;
     object-position: center;
     border-radius: 5px;
   }
-  .describe-picture {
-    color: $txt-bgwhite;
-    font-weight: 500;
-    font: 25px;
-    @include size-container(100%, auto);
-    @include flex(space-between, center);
-    flex-direction: row-reverse;
-    padding: 5px;
+}
 
+.legend {
+  height: 20px;
+  @include flex(space-between, center);
+  padding: 5px;
+  font: 25px;
+  color: $txt-bgwhite;
+ 
+}
+
+.video {
+  @include size-container(400px, 400px);
+}
+
+.like_and_price {
+  @include flex(space-between, center);
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  height: 40px;
+  background-color: $bg-etatchange;
+  font-size: 18px;
+  padding: 0 15px;
+
+  p {
+    display: inline;
   }
-}
-
-.video{
-  @include size-container(400px,400px)
-}
-
-.like_and_price{
-    @include flex(space-between, center);
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 200px;
-    height: 40px;
-    background-color:$bg-etatchange;
-    font-size: 18px;
-    padding: 0 15px;
-    
-    p{
-        display: inline;
-    }
 }
