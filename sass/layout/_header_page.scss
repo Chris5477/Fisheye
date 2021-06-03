@@ -1,7 +1,5 @@
 .pages-header{
     @include size-container(95%,10vh);
     @include flex(flex-start, center);
-    img{
-        padding-left: 150px;
-    }
+   
 }

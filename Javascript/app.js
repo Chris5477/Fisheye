@@ -18,6 +18,15 @@ ELEMENTHTML.allPicturePhotographer.forEach((el) => {
     ELEMENTHTML.photo.setAttribute("src", srcPicture);
   });
 });
+ELEMENTHTML.allPicturePhotographer.forEach(el =>(el.addEventListener("keydown", (event) => {
+  const trigger = event.key;
+  if(trigger === "Enter"){
+    ELEMENTMODAL.lightBox.classList.add("show_lightbox");
+    hiddenElement();
+    const srcPicture = el.getAttribute("src");
+    ELEMENTHTML.photo.setAttribute("src", srcPicture);
+  }
+})))
 
 ELEMENTBTN.btnCloseLightbox.addEventListener("click", closeLightbox);
 ELEMENTFORM.formContact.addEventListener("submit", validData);

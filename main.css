@@ -1,9 +1,10 @@
 body {
-  width: 95%;
+  width: 90%;
   height: 100vh;
   padding: 0;
   box-sizing: border-box;
   font-family: "tiresias_infofontregular";
+  margin: auto;
 }
 
 * ul, li, a {
@@ -46,7 +47,7 @@ body {
   font-size: 18px;
   font-weight: bold;
   border-radius: 5px;
-  margin-left: 15px;
+  margin-left: 2%;
 }
 .senddata:hover {
   background-color: #db8776;
@@ -234,10 +235,12 @@ h1.title--smaller {
   font-weight: bold;
 }
 
-.fas {
-  display: flex;
-  flex-direction: row-reverse;
-  font-size: 20px;
+.fa_heart {
+  font-size: 22px;
+}
+
+.fa-heart::before {
+  margin-left: 10px;
 }
 
 .pages-header {
@@ -246,9 +249,6 @@ h1.title--smaller {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-}
-.pages-header img {
-  padding-left: 150px;
 }
 
 .link_anchor {
@@ -312,7 +312,6 @@ h1.title--smaller {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 100px;
   flex-wrap: wrap;
 }
 
@@ -344,8 +343,9 @@ h1.title--smaller {
   margin: 0;
 }
 .photographer__profil .photo_photographer {
-  width: 200px;
-  height: 200px;
+  margin-bottom: 10px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
 }
 
@@ -366,7 +366,7 @@ h1.title--smaller {
   font-weight: 10px;
 }
 .moreinfo--nomargin {
-  margin: 0;
+  margin: 4px 0;
 }
 
 .tag {
@@ -402,7 +402,7 @@ h1.title--smaller {
   .index_maintitle {
     width: 59%;
     order: 2;
-    font-size: 20px;
+    font-size: 15px;
     text-align: center;
   }
 
@@ -416,7 +416,7 @@ h1.title--smaller {
   }
   .index_nav span a {
     margin: 0;
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .our_photographers {
@@ -434,18 +434,12 @@ h1.title--smaller {
     height: auto;
   }
 }
-.pages_main {
-  width: 90%;
-  height: auto;
-}
-
 .profil_photographer {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 60%;
+  width: 100%;
   height: auto;
-  margin-left: 100px;
 }
 .profil_photographer__name {
   color: #d3573c;
@@ -456,9 +450,9 @@ h1.title--smaller {
 
 .info_photographer {
   width: 90%;
-  height: 200px;
+  height: 100px;
   position: relative;
-  margin-left: 100px;
+  margin-bottom: 50px;
 }
 .info_photographer__country {
   color: #901c1c;
@@ -480,7 +474,7 @@ h1.title--smaller {
   height: 180px;
   border-radius: 50%;
   position: absolute;
-  top: -40%;
+  top: -80%;
   right: 0;
 }
 
@@ -491,7 +485,7 @@ h1.title--smaller {
 }
 
 .form_organize {
-  margin: 0 0 20px 125px;
+  margin-bottom: 50px;
 }
 .form_organize label {
   font-weight: bold;
@@ -537,13 +531,16 @@ option {
   height: auto;
   display: grid;
   grid-template-columns: repeat(auto-fill, 400px);
-  grid-gap: 150px;
-  justify-content: center;
+  grid-gap: 50px;
 }
 
 .picture {
   margin: 0;
   width: 100%;
+  position: relative;
+}
+.picture figure {
+  margin: 0;
 }
 .picture img {
   width: 400px;
@@ -553,14 +550,20 @@ option {
   border-radius: 5px;
 }
 
-.legend {
-  height: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.describe-picture {
+  width: 100%;
   padding: 5px;
   font: 25px;
   color: #901c1c;
+}
+
+.count_like {
+  position: absolute;
+  display: inline-flex;
+  flex-direction: row-reverse;
+  color: #901c1c;
+  right: 0;
+  bottom: 2%;
 }
 
 .video {
@@ -632,7 +635,8 @@ option {
     position: fixed;
     left: 50%;
     bottom: 5%;
-    transform: translateX(-60%);
+    transform: translateX(-50%);
+    z-index: 1;
   }
 
   .tagofphotographer {
@@ -672,6 +676,7 @@ option {
     width: 90%;
     height: 340px;
     margin-left: 20px;
+    margin-bottom: 150px;
   }
 
   .like_and_price {

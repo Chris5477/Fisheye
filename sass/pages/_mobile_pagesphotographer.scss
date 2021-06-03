@@ -43,7 +43,8 @@
     position: fixed;
     left: 50%;
     bottom: 5%;
-    transform: translateX(-60%);
+    transform: translateX(-50%);
+    z-index: 1;
   }
 
   .tagofphotographer {
@@ -81,6 +82,7 @@
   .video {
     @include size-container(90%, 340px);
     margin-left: 20px;
+    margin-bottom: 150px;
   }
   .like_and_price {
     display: none;

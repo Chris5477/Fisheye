@@ -75,8 +75,6 @@ export const sortPicture = (arr) => {
 };
 
 
-//fonction permettant d'ajouter un like
-
 //fonction d'ouverture de modal
 
 export const openModal = () => {

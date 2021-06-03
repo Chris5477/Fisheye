@@ -1,8 +1,9 @@
 body{
-    @include size-container(95%, 100vh);
+    @include size-container(90%, 100vh);
     padding: 0;
     box-sizing: border-box;
     font-family: "tiresias_infofontregular" ;
+    margin: auto;
 }
 
 *ul, li, a{

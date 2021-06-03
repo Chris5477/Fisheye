@@ -1,11 +1,8 @@
-.pages_main {
-  @include size-container(90%, auto);
-}
+
 
 .profil_photographer {
   @include flex(flex-start, center);
-  @include size-container(60%, auto);
-  margin-left: 100px;
+  @include size-container(100%, auto);
   &__name {
     color: $txt-secondary;
     font-size: 50px;
@@ -15,9 +12,9 @@
 }
 
 .info_photographer {
-  @include size-container(90%, 200px);
+  @include size-container(90%, 100px);
   position: relative;
-  margin-left: 100px;
+  margin-bottom: 50px;
   &__country {
     color: $txt-bgwhite;
     font-size: 22px;
@@ -38,7 +35,7 @@
   @include size-container(180px, 180px);
   border-radius: 50%;
   position: absolute;
-  top: -40%;
+  top: -80%;
   right: 0;
 }
 
@@ -48,7 +45,7 @@
 }
 
 .form_organize {
-  margin: 0 0 20px 125px;
+  margin-bottom: 50px;
   & label {
     font-weight: bold;
     font-size: 22px;
@@ -93,13 +90,16 @@ option {
   @include size-container(100%, auto);
   display: grid;
   grid-template-columns: repeat(auto-fill, 400px);
-  grid-gap: 150px;
-  justify-content: center;
+  grid-gap: 50px;
 }
 
 .picture {
   margin: 0;
   width: 100%;
+  position: relative;
+  figure{
+    margin: 0;
+  }
   img {
     @include size-container(400px, 400px);
     object-fit: cover;
@@ -108,15 +108,22 @@ option {
   }
 }
 
-.legend {
-  height: 20px;
-  @include flex(space-between, center);
+.describe-picture{
+  width: 100%;
   padding: 5px;
   font: 25px;
   color: $txt-bgwhite;
- 
-}
 
+}
+.count_like{
+  position: absolute;
+  display: inline-flex;
+  flex-direction: row-reverse;
+  color : $txt-bgwhite;
+  right: 0;
+  bottom: 2%;
+
+}
 .video {
   @include size-container(400px, 400px);
 }

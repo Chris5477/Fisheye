@@ -50,7 +50,6 @@
 .our_photographers {
   @include size-container(95%, auto);
   @include flex(space-between, center);
-  margin-left: 100px;
   flex-wrap: wrap;
 }
 
@@ -75,8 +74,9 @@
       margin: 0;
     }
     .photo_photographer {
-      width: 200px;
-      height: 200px;
+      margin-bottom: 10px;
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
     }
   }
@@ -98,7 +98,7 @@
     font-weight: 10px;
   }
   &--nomargin {
-    margin: 0;
+    margin: 4px 0;
   }
 }
 
