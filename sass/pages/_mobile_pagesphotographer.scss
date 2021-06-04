@@ -1,44 +1,47 @@
-@media screen and (max-width: 798px) {
-  body{
+  body {
     width: 98%;
     height: auto;
   }
-  .pages-header{
-    @include size-container(100%,10vh);
-   
-    img{
-        padding-left: 25px;
-    }
-}
 
-  .profil_photographer{
-    width: 100%;
-    margin-left:0;
-    &__name {
-      color: $txt-secondary;
-      font-size: 30px;
+  .pages-header {
+    @include size-container(100%, 10vh);
+
+    img {
+      padding-left: 25px;
+      width: 60%;
     }
   }
 
+  .profil_photographer {
+    width: 100%;
+    margin-left: 0;
+    &__name {
+      color: $txt-secondary;
+      font-size: 20px;
+      margin: 0px 30px
+    }
+  }
+
+  
   .info_photographer {
-    @include size-container(90%,100px);
-    position: relative;
-    margin-left:20px;
+    @include size-container(90%, 100px);
+    margin-left: 20px;
     &__country {
       color: $txt-bgwhite;
-      font-size: 18px;
-      margin: 5px 10px;
-    }
-    &__slogan {
       font-size: 16px;
       margin: 5px 10px;
     }
+    &__slogan {
+      font-size: 14px;
+      margin: 5px 10px;
+    }
   }
-  
+
   .picture-profil {
     @include size-container(80px, 80px);
-    top: -60%;
-    right: 0%
+    position: absolute;
+    top: -5%;
+    right: 2%;
   }
 
   .contact_photographer {
@@ -70,25 +73,24 @@
 
   .container-picture {
     display: block;
-    width: 100%;
+    width: 95%;
     margin: auto;
     margin-bottom: 100px;
-    .picture{
+    .picture {
       margin: 15px auto;
       object-fit: cover;
-        }
+    }
     img {
       @include size-container(100%, 250px);
     }
     .describe-picture {
-      width: 100%;
+      width: 95%;
     }
   }
 
   .video {
-    @include size-container(100%, 340px);
+    @include size-container(100%, 250px);
   }
-  
 
   .like_and_price {
     display: none;
@@ -124,4 +126,4 @@
     margin: 20px auto;
     border-radius: 5px;
   }
-}
+

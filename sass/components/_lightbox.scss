@@ -7,7 +7,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  @include size-container(100%, 100vh);
+  @include size-container(100%, 90vh);
   @include flex(center, center);
 }
 

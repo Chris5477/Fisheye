@@ -19,16 +19,16 @@
     margin: 50px auto;
     border-radius: 5px;
     box-shadow: 3px 3px 3px darken($color: $bg-etatchange, $amount: 10%),
-                -3px -3px 3px lighten($color: $bg-etatchange, $amount: 10%);
+    -3px -3px 3px lighten($color: $bg-etatchange, $amount: 10%);
 }
-    .head_forms{
-        @include flex(space-between, center);
-        h1{
-            font-size: 50px;
-            margin-left: 25px;
-            font-weight: normal;
-        }
+.head_forms{
+    @include flex(space-between, center);
+    h1{
+        font-size: 50px;
+        margin-left: 25px;
+        font-weight: normal;
     }
+}
 
 .forms_photographer{
     @include size-container(100%, 85vh);
@@ -59,25 +59,3 @@
     }
 }
 
-h1.title--smaller{
-    font-size: 40px;
-}
-
-@media screen and (max-width:798px) {
-
-       .head_forms h1{
-            font-size: 20px;
-            margin : 10px 0 10px 10px
-        }
-
-        h1.title--smaller{
-            font-size: 15px;
-        }
-
-        .formData{
-            margin: 5px auto;
-        }
-    
-       
-        
-}

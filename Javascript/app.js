@@ -3,6 +3,8 @@ import { openModal, closeModal, closeLightbox, hiddenElement, } from "./function
 import { validData } from "./validForm.js";
 import { responsePromise } from "./response.js";
 
+
+
 fetch("./data.json")
   .then((res) => res.json())
   .then(responsePromise);

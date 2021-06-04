@@ -1,0 +1,18 @@
+.content_lightbox {
+  @include size-container(100%, 100%);
+  @include flex(space-between, center);
+  .btn {
+    padding: 15px;
+    font-size: 20px;
+    .fa-chevron-left,
+    .fa-chevron-right {
+      color: $txt-bgwhite;
+    }
+  }
+}
+.photo {
+  max-height: none;
+  height: 80vh;
+  width: 100%;
+  object-fit: contain;
+}

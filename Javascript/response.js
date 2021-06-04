@@ -12,8 +12,8 @@ export const responsePromise = (data) => {
     const metaData = utilData(mimi, "Mimi");
     const mimiPicture = onlyPicture(metaData)
     showPicture(metaData);
+    ELEMENTFORM.select.addEventListener("input",() => sortPicture(metaData));
     ELEMENTHTML.liked.forEach((el,key) => el.addEventListener("click",() =>  el.innerHTML = metaData[key].likes++))
-    ELEMENTFORM.select.addEventListener("click",() => sortPicture(metaData));
     ELEMENTBTN.btnPrevious.addEventListener("click", () => previousPicture(mimiPicture));
     ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture(mimiPicture));
     document.addEventListener("keydown", (event) => keyboardLightbox(mimiPicture));
@@ -26,7 +26,7 @@ export const responsePromise = (data) => {
     const metaData = utilData(ellie, "Ellie_Rose");
     const elliePicture = onlyPicture(metaData)
     showPicture(metaData);
-    ELEMENTFORM.select.addEventListener("click",() => sortPicture(metaData));
+    ELEMENTFORM.select.addEventListener("input",() => sortPicture(metaData));
     ELEMENTHTML.liked.forEach((el,key) => el.addEventListener("click",() =>  el.innerHTML = metaData[key].likes++))
     ELEMENTBTN.btnPrevious.addEventListener("click", () => previousPicture(elliePicture));
     ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture(elliePicture));
@@ -40,8 +40,8 @@ export const responsePromise = (data) => {
     dataProfil(objPhotographer, 2);
     const metaData = utilData(tracy, "Tracy");
     const tracyPicture = onlyPicture(metaData)
+    ELEMENTFORM.select.addEventListener("input",() => sortPicture(metaData));
     showPicture(metaData);
-    ELEMENTFORM.select.addEventListener("click",() => sortPicture(metaData));
     ELEMENTHTML.liked.forEach((el,key) => el.addEventListener("click",() =>  el.innerHTML = metaData[key].likes++))
     ELEMENTBTN.btnPrevious.addEventListener("click", () => previousPicture(tracyPicture));
     ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture(tracyPicture));
@@ -54,8 +54,8 @@ export const responsePromise = (data) => {
     const nabeel = sortJson(objMedia, 527);
     const metaData = utilData(nabeel, "Nabeel");
     const nabeelPicture = onlyPicture(metaData)
+    ELEMENTFORM.select.addEventListener("input",() => sortPicture(metaData));
     showPicture(metaData);
-    ELEMENTFORM.select.addEventListener("click",() => sortPicture(metaData));
     ELEMENTHTML.liked.forEach((el,key) => el.addEventListener("click",() =>  el.innerHTML = metaData[key].likes++))
     ELEMENTBTN.btnPrevious.addEventListener("click", () => previousPicture(nabeelPicture));
     ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture(nabeelPicture));
@@ -68,8 +68,8 @@ export const responsePromise = (data) => {
     const rhode = sortJson(objMedia, 925);
     const metaData = utilData(rhode, "Rhode");
     const rhodePicture = onlyPicture(metaData)
+    ELEMENTFORM.select.addEventListener("input",() => sortPicture(metaData));
     showPicture(metaData);
-    ELEMENTFORM.select.addEventListener("click",() => sortPicture(metaData));
     ELEMENTHTML.liked.forEach((el,key) => el.addEventListener("click",() =>  el.innerHTML = metaData[key].likes++))
     ELEMENTBTN.btnPrevious.addEventListener("click", () => previousPicture(rhodePicture));
     ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture(rhodePicture));
@@ -82,8 +82,8 @@ export const responsePromise = (data) => {
     const marcel = sortJson(objMedia, 195);
     const metaData = utilData(marcel, "Marcel");
     const marcelPicture = onlyPicture(metaData)
+    ELEMENTFORM.select.addEventListener("input",() => sortPicture(metaData));
     showPicture(metaData);
-    ELEMENTFORM.select.addEventListener("click",() => sortPicture(metaData));
     ELEMENTHTML.liked.forEach((el,key) => el.addEventListener("click",() =>  el.innerHTML = metaData[key].likes++))
     ELEMENTBTN.btnPrevious.addEventListener("click", () => previousPicture(marcelPicture));
     ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture(marcelPicture));

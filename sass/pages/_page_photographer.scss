@@ -1,4 +1,9 @@
 
+.content_profil{
+  background-color:$bg-ligthen;
+  position: relative;
+  margin-bottom: 50px;
+}
 
 .profil_photographer {
   @include flex(flex-start, center);
@@ -12,9 +17,7 @@
 }
 
 .info_photographer {
-  @include size-container(90%, 100px);
-  position: relative;
-  margin-bottom: 50px;
+  @include size-container(100%, 100px);
   &__country {
     color: $txt-bgwhite;
     font-size: 22px;
@@ -35,7 +38,7 @@
   @include size-container(180px, 180px);
   border-radius: 50%;
   position: absolute;
-  top: -80%;
+  top: 0;
   right: 0;
 }
 
