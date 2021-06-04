@@ -1,4 +1,8 @@
 @media screen and (max-width: 798px) {
+  body{
+    width: 98%;
+    height: auto;
+  }
   .pages-header{
     @include size-container(100%,10vh);
    
@@ -34,6 +38,7 @@
   .picture-profil {
     @include size-container(80px, 80px);
     top: -60%;
+    right: 0%
   }
 
   .contact_photographer {
@@ -67,6 +72,7 @@
     display: block;
     width: 100%;
     margin: auto;
+    margin-bottom: 100px;
     .picture{
       margin: 15px auto;
       object-fit: cover;
@@ -80,10 +86,10 @@
   }
 
   .video {
-    @include size-container(90%, 340px);
-    margin-left: 20px;
-    margin-bottom: 150px;
+    @include size-container(100%, 340px);
   }
+  
+
   .like_and_price {
     display: none;
   }

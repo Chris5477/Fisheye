@@ -108,14 +108,13 @@ option {
   }
 }
 
-.describe-picture{
+.describe-picture, .describe-video{
   width: 100%;
   padding: 5px;
   font: 25px;
   color: $txt-bgwhite;
-
 }
-.count_like{
+.count_like, .count_like_video{
   position: absolute;
   display: inline-flex;
   flex-direction: row-reverse;
@@ -126,19 +125,18 @@ option {
 }
 .video {
   @include size-container(400px, 400px);
+  object-fit: cover;
 }
 
 .like_and_price {
   @include flex(space-between, center);
+  @include size-container(200px, 40px);
+  background-color: $bg-etatchange;
   position: fixed;
   bottom: 0;
   right: 0;
-  width: 200px;
-  height: 40px;
-  background-color: $bg-etatchange;
   font-size: 18px;
   padding: 0 15px;
-
   p {
     display: inline;
   }

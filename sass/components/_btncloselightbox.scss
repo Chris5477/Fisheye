@@ -8,3 +8,10 @@
     color: $txt-bgwhite;
 }
 
+@media screen and (max-width:798px) {
+    .close_lightbox{
+        padding: 10px;
+        font-size: 25px;
+    }
+}
+

@@ -11,6 +11,7 @@ export const ELEMENTHTML = {
     mainPageElement : document.querySelector(".pages-main"),
     allPicturePhotographer :[...document.querySelectorAll(".picture img")],
     legend : [...document.querySelectorAll(".describe-picture")],
+    legendVideo : document.querySelector(".describe-video"),
     photo : document.querySelector('.photo'),
     nameMember : document.querySelector(".profil_photographer__name"),
     localisationMember : document.querySelector(".info_photographer__country"), 
@@ -18,7 +19,7 @@ export const ELEMENTHTML = {
     tagsMember : [...document.querySelectorAll(".tagofphotographer")],
     pricePhotographer : document.querySelector(".price"),
     liked : [...document.querySelectorAll(".count_like")],
-    like : [...document.querySelectorAll(".fa-heart")],
+    likedVideo : document.querySelector(".count_like_video"),
     video : document.querySelector("video")
 }
 

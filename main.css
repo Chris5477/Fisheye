@@ -230,6 +230,12 @@ h1.title--smaller {
   color: #901c1c;
 }
 
+@media screen and (max-width: 798px) {
+  .close_lightbox {
+    padding: 10px;
+    font-size: 25px;
+  }
+}
 .error {
   color: #720000;
   font-weight: bold;
@@ -266,10 +272,6 @@ h1.title--smaller {
   text-align: center;
 }
 
-.logo {
-  margin-left: 25px;
-}
-
 .index_header {
   width: 100%;
   height: 10vh;
@@ -277,33 +279,33 @@ h1.title--smaller {
   justify-content: space-between;
   align-items: center;
 }
-
-.index_nav {
-  width: 40%;
-  display: inline;
+.index_header .logo {
+  display: inline-flex;
+  width: 100%;
 }
-.index_nav span a {
-  color: #901c1c;
-  font-size: 14px;
+.index_header .index_nav {
+  display: inline-flex;
+  margin-left: 10px;
+}
+.index_header .index_nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+.index_header .index_nav ul li {
   margin: 0 5px;
 }
-
-.index_nav ul {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.index_nav ul li {
-  margin: 0 10px;
-}
-
-.index_maintitle {
-  width: 20%;
-  font-weight: normal;
-  letter-spacing: 1px;
+.index_header .index_nav ul li a {
+  display: inline-flex;
   color: #901c1c;
-  font-size: 35px;
+  font-size: 0.8rem;
+}
+.index_header .index_maintitle {
+  color: #901c1c;
+  font-weight: 200;
+  font-size: 1.6em;
+  letter-spacing: 0.2px;
 }
 
 .our_photographers {
@@ -387,36 +389,22 @@ h1.title--smaller {
     flex-wrap: wrap;
     margin: 20px 10px;
   }
-
-  .img_link {
-    width: 39%;
-  }
-
-  .logo {
-    display: block;
-    width: 100%;
-    margin: 0;
+  .index_header .img_link {
     order: 1;
+    width: 40%;
   }
-
-  .index_maintitle {
-    width: 59%;
-    order: 2;
-    font-size: 15px;
-    text-align: center;
-  }
-
-  .index_nav {
+  .index_header .index_nav {
     order: 3;
     width: 100%;
   }
-  .index_nav ul {
+  .index_header .index_nav ul {
     flex-wrap: wrap;
-    padding: 0;
   }
-  .index_nav span a {
-    margin: 0;
-    font-size: 10px;
+  .index_header .index_maintitle {
+    order: 2;
+    width: 55%;
+    text-align: right;
+    font-size: 0.9em;
   }
 
   .our_photographers {
@@ -550,14 +538,14 @@ option {
   border-radius: 5px;
 }
 
-.describe-picture {
+.describe-picture, .describe-video {
   width: 100%;
   padding: 5px;
   font: 25px;
   color: #901c1c;
 }
 
-.count_like {
+.count_like, .count_like_video {
   position: absolute;
   display: inline-flex;
   flex-direction: row-reverse;
@@ -569,18 +557,19 @@ option {
 .video {
   width: 400px;
   height: 400px;
+  object-fit: cover;
 }
 
 .like_and_price {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  bottom: 0;
-  right: 0;
   width: 200px;
   height: 40px;
   background-color: #db8776;
+  position: fixed;
+  bottom: 0;
+  right: 0;
   font-size: 18px;
   padding: 0 15px;
 }
@@ -589,6 +578,11 @@ option {
 }
 
 @media screen and (max-width: 798px) {
+  body {
+    width: 98%;
+    height: auto;
+  }
+
   .pages-header {
     width: 100%;
     height: 10vh;
@@ -626,6 +620,7 @@ option {
     width: 80px;
     height: 80px;
     top: -60%;
+    right: 0%;
   }
 
   .contact_photographer {
@@ -659,6 +654,7 @@ option {
     display: block;
     width: 100%;
     margin: auto;
+    margin-bottom: 100px;
   }
   .container-picture .picture {
     margin: 15px auto;
@@ -673,10 +669,8 @@ option {
   }
 
   .video {
-    width: 90%;
+    width: 100%;
     height: 340px;
-    margin-left: 20px;
-    margin-bottom: 150px;
   }
 
   .like_and_price {

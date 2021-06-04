@@ -52,9 +52,15 @@ export const showPicture = (arr) => {
 
 export const showVideo = (photographerName, arr) => {
   const onlyVideo = arr.filter((item) => item.video);
-  onlyVideo.push({ description: onlyVideo[0].description });
+  onlyVideo.push({
+     description: onlyVideo[0].description,
+     title : onlyVideo[0].title,
+     likes : onlyVideo[0].likes});
   ELEMENTHTML.video.setAttribute("src", "ressources/" + photographerName + "/" + onlyVideo[0].video);
   ELEMENTHTML.video.setAttribute("aria-label", onlyVideo[1].description);
+  ELEMENTHTML.legendVideo.innerHTML = onlyVideo[0].title
+  ELEMENTHTML.likedVideo.innerHTML = onlyVideo[0].likes;
+  
 };
 
 //fonction permettant de trier les photos par date , popularité et titre

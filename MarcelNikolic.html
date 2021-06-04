@@ -20,24 +20,23 @@
             <button aria-label="Contactez-moi"  class="contact_photographer">Contactez-moi</button>
         </header>
         <article tabindex="0" aria-label="Information sur Marcel Nikolic" class="info_photographer">     
-                <p tabindex="0" class="info_photographer__country" lang="en"></p>
-                <p tabindex="0" class="info_photographer__slogan"></p>
-                <div class="container_tag">
+            <p tabindex="0" class="info_photographer__country" lang="en"></p>
+            <p tabindex="0" class="info_photographer__slogan"></p>
+            <div class="container_tag">
                 <span class="tagofphotographer"></span>
                 <span class="tagofphotographer"></span>
             </div>
             <aside>
-              <img tabindex="0" aria-label="Photo de Marcel Nikolic" class="picture-profil" src="ressources/Photographes/MarcelNikolic.jpg" alt="Marcel Nikolic">  
+                <img tabindex="0" aria-label="Photo de Marcel Nikolic" class="picture-profil" src="ressources/Photographes/MarcelNikolic.jpg" alt="Marcel Nikolic">  
             </aside>
         </article>
         <section tabindex="0" aria-label="Travaux du photographe" class="work_photographer">
             <h2 class="hiddenElement">Echantillon des travaux du photographes</h2>
             <form action="#" method="get" class="form_organize">
-            <label for="organize">Trier par</label>
-            <select name="organize" id="organize" class="organize">
-                    <option>Choix :</option>
-                    <option value="popularite">Popularité</option>
+                <label for="organize">Trier par</label>
+                <select name="organize" id="organize" class="organize">
                     <option value="date">Date</option>
+                    <option value="popularite">Popularité</option>
                     <option value="titre">Titre</option>
                 </select>
             </form>
@@ -105,7 +104,13 @@
                     </figure>
                     <span class="count_like fas fa-heart"></span>
                 </div>
-                <video class="video" controls></video>
+                <div class="picture">
+                    <figure>
+                        <video tabindex="0" class="video" src="." controls></video>
+                        <figcaption tabindex="0" class="describe-video"></figcaption>
+                    </figure>
+                    <span class="count_like_video fas fa-heart"></span>
+                </div>
             </div>
         </section>
         <div class="like_and_price">
@@ -151,6 +156,6 @@
             <button aria-label="image suivante" class="btn next"><span class="fas fa-chevron-right"></span></button>
         </div>
     </div>
-        <script type="module" src="Javascript/app.js"></script>
+    <script type="module" src="Javascript/app.js"></script>
 </body>
 </html>
