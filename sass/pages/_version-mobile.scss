@@ -1,5 +1,8 @@
-@import "./index-mobile";
-@import "./mobile_pagesphotographer";
-@import "../components/lightbox-mobile";
-@import "../components/modal-mobile";
-@import "../components/btn-closemodal-mobile";
+@media screen and (max-width:798px){
+
+    @import "./index-mobile";
+    @import "./mobile_pagesphotographer";
+    @import "../components/lightbox-mobile";
+    @import "../components/modal-mobile";
+    @import "../components/btn-closemodal-mobile";
+}

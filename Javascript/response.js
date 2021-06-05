@@ -7,17 +7,19 @@ export const responsePromise = (data) => {
   const objMedia = data.media;
   
   if (ELEMENTHTML.title.innerHTML == "Mimi Keel | FishEye") {
+
     dataProfil(objPhotographer, 0);
     const mimi = sortJson(objMedia, 243);
     const metaData = utilData(mimi, "Mimi");
     const mimiPicture = onlyPicture(metaData)
     showPicture(metaData);
+    const videoMember = showVideo("Mimi",mimi);
+    const allMedia = videoMember.concat(mimiPicture);
     ELEMENTFORM.select.addEventListener("input",() => sortPicture(metaData));
     ELEMENTHTML.liked.forEach((el,key) => el.addEventListener("click",() =>  el.innerHTML = metaData[key].likes++))
-    ELEMENTBTN.btnPrevious.addEventListener("click", () => previousPicture(mimiPicture));
-    ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture(mimiPicture));
-    document.addEventListener("keydown", (event) => keyboardLightbox(mimiPicture));
-    showVideo("Mimi",mimi);
+    ELEMENTBTN.btnPrevious.addEventListener("click", () => previousPicture(allMedia, "Mimi"));
+    ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture(allMedia, "Mimi"));
+    document.addEventListener("keydown", (event) => keyboardLightbox(allMedia, "Mimi"));
   }
 
   if (ELEMENTHTML.title.innerHTML == "Ellie-Rose Wilkens | FishEye") {
@@ -26,11 +28,13 @@ export const responsePromise = (data) => {
     const metaData = utilData(ellie, "Ellie_Rose");
     const elliePicture = onlyPicture(metaData)
     showPicture(metaData);
+    const videoMember = showVideo("ELlie_Rose",ellie);
+    const allMedia = videoMember.concat(elliePicture);
     ELEMENTFORM.select.addEventListener("input",() => sortPicture(metaData));
     ELEMENTHTML.liked.forEach((el,key) => el.addEventListener("click",() =>  el.innerHTML = metaData[key].likes++))
-    ELEMENTBTN.btnPrevious.addEventListener("click", () => previousPicture(elliePicture));
-    ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture(elliePicture));
-    document.addEventListener("keydown", (event) => keyboardLightbox(elliePicture));
+    ELEMENTBTN.btnPrevious.addEventListener("click", () => previousPicture(allMedia, "Ellie_Rose"));
+    ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture(allMedia, "Ellie_Rose"));
+    document.addEventListener("keydown", (event) => keyboardLightbox(allMedia, "Ellie_Rose"));
     showVideo("Ellie_Rose", ellie)
     
   }
@@ -42,10 +46,12 @@ export const responsePromise = (data) => {
     const tracyPicture = onlyPicture(metaData)
     ELEMENTFORM.select.addEventListener("input",() => sortPicture(metaData));
     showPicture(metaData);
+    const videoMember = showVideo("Tracy", tracy);
+    const allMedia = videoMember.concat(tracyPicture);
     ELEMENTHTML.liked.forEach((el,key) => el.addEventListener("click",() =>  el.innerHTML = metaData[key].likes++))
-    ELEMENTBTN.btnPrevious.addEventListener("click", () => previousPicture(tracyPicture));
-    ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture(tracyPicture));
-    document.addEventListener("keydown", (event) => keyboardLightbox(tracyPicture));
+    ELEMENTBTN.btnPrevious.addEventListener("click", () => previousPicture(allMedia, "Tracy"));
+    ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture(allMedia, "Tracy"));
+    document.addEventListener("keydown", (event) => keyboardLightbox(allMedia, "Tracy"));
     showVideo("Tracy", tracy)
   }
 
@@ -56,10 +62,12 @@ export const responsePromise = (data) => {
     const nabeelPicture = onlyPicture(metaData)
     ELEMENTFORM.select.addEventListener("input",() => sortPicture(metaData));
     showPicture(metaData);
+    const videoMember = showVideo("Nabeel", nabeel);
+    const allMedia = videoMember.concat(nabeelPicture);
     ELEMENTHTML.liked.forEach((el,key) => el.addEventListener("click",() =>  el.innerHTML = metaData[key].likes++))
-    ELEMENTBTN.btnPrevious.addEventListener("click", () => previousPicture(nabeelPicture));
-    ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture(nabeelPicture));
-    document.addEventListener("keydown", (event) => keyboardLightbox(nabeelPicture));
+    ELEMENTBTN.btnPrevious.addEventListener("click", () => previousPicture(allMedia, "Nabeel"));
+    ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture(allMedia, "Nabeel"));
+    document.addEventListener("keydown", (event) => keyboardLightbox(allMedia, "Nabeel"));
     showVideo("Nabeel", nabeel)
   }
 
@@ -70,10 +78,12 @@ export const responsePromise = (data) => {
     const rhodePicture = onlyPicture(metaData)
     ELEMENTFORM.select.addEventListener("input",() => sortPicture(metaData));
     showPicture(metaData);
+    const videoMember = showVideo("Rhode", rhode);
+    const allMedia = videoMember.concat(rhodePicture);
     ELEMENTHTML.liked.forEach((el,key) => el.addEventListener("click",() =>  el.innerHTML = metaData[key].likes++))
-    ELEMENTBTN.btnPrevious.addEventListener("click", () => previousPicture(rhodePicture));
-    ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture(rhodePicture));
-    document.addEventListener("keydown", (event) => keyboardLightbox(rhodePicture));
+    ELEMENTBTN.btnPrevious.addEventListener("click", () => previousPicture(allMedia, "Rhode"));
+    ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture(allMedia, "Rhode"));
+    document.addEventListener("keydown", (event) => keyboardLightbox(allMedia, "Rhode"));
     showVideo("Rhode", rhode)
   }
 
@@ -84,10 +94,12 @@ export const responsePromise = (data) => {
     const marcelPicture = onlyPicture(metaData)
     ELEMENTFORM.select.addEventListener("input",() => sortPicture(metaData));
     showPicture(metaData);
+    const videoMember = showVideo("Marcel",marcel);
+    const allMedia = videoMember.concat(marcelPicture);
     ELEMENTHTML.liked.forEach((el,key) => el.addEventListener("click",() =>  el.innerHTML = metaData[key].likes++))
-    ELEMENTBTN.btnPrevious.addEventListener("click", () => previousPicture(marcelPicture));
-    ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture(marcelPicture));
-    document.addEventListener("keydown", (event) => keyboardLightbox(marcelPicture));
+    ELEMENTBTN.btnPrevious.addEventListener("click", () => previousPicture(allMedia, "Marcel"));
+    ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture(allMedia, "Marcel"));
+    document.addEventListener("keydown", (event) => keyboardLightbox(allMedia, "Marcel"));
     showVideo("Marcel", marcel)
   }
   

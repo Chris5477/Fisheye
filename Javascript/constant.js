@@ -9,7 +9,8 @@ export const ELEMENTHTML = {
     tags : [...document.querySelectorAll(".tag")],
     header : document.querySelector(".pages-header"),
     mainPageElement : document.querySelector(".pages-main"),
-    allPicturePhotographer :[...document.querySelectorAll(".picture img")],
+    allPicturePhotographer :[...document.querySelectorAll(".img")],
+    allMedia : [...document.querySelectorAll(".media")],
     legend : [...document.querySelectorAll(".describe-picture")],
     legendVideo : document.querySelector(".describe-video"),
     photo : document.querySelector('.photo'),
@@ -20,7 +21,8 @@ export const ELEMENTHTML = {
     pricePhotographer : document.querySelector(".price"),
     liked : [...document.querySelectorAll(".count_like")],
     likedVideo : document.querySelector(".count_like_video"),
-    video : document.querySelector("video")
+    video : document.querySelector("video"),
+    movie : document.querySelector(".movie")
 }
 
 export const ELEMENTMODAL = {

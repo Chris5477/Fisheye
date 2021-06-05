@@ -3,6 +3,7 @@
   background-color:$bg-ligthen;
   position: relative;
   margin-bottom: 50px;
+  padding: 30px 0;
 }
 
 .profil_photographer {
@@ -35,11 +36,11 @@
 }
 
 .picture-profil {
-  @include size-container(180px, 180px);
+  @include size-container(160px, 160px);
   border-radius: 50%;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 10%;
+  right: 2%;
 }
 
 .work_photographer {

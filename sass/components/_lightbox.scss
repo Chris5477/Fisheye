@@ -12,8 +12,9 @@
 }
 
 .content_lightbox {
-  @include size-container(100%, 80vh);
+  @include size-container(100%, 100vh);
   @include flex(space-between, center);
+  position: relative;
   .btn {
     padding: 30px;
     font-size: 50px;
@@ -24,29 +25,20 @@
 }
 
 .photo {
-  height: 90vh;
-  width: 100%;
-  object-fit: scale-down;
+  width: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
 }
 
-@media screen and (max-width: 798px) {
-  
-  .content_lightbox {
-    @include size-container(100%, 100%);
-    @include flex(space-between, center);
-    .btn {
-      padding: 15px;
-      font-size: 20px;
-      .fa-chevron-left , .fa-chevron-right{
-        color: $txt-bgwhite;
-      }
-    }
-  }
-  .photo {
-    max-height: none;
-    height: 80vh;
-    width: 100%;
-    object-fit: contain;
-  }
-    
+.movie {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
 }
+

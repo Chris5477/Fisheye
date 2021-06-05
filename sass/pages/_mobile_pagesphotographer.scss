@@ -28,11 +28,11 @@
     margin-left: 20px;
     &__country {
       color: $txt-bgwhite;
-      font-size: 16px;
+      font-size: 14px;
       margin: 5px 10px;
     }
     &__slogan {
-      font-size: 14px;
+      font-size: 12px;
       margin: 5px 10px;
     }
   }
@@ -40,8 +40,7 @@
   .picture-profil {
     @include size-container(80px, 80px);
     position: absolute;
-    top: -5%;
-    right: 2%;
+    right: 1%;
   }
 
   .contact_photographer {
