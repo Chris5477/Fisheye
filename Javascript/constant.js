@@ -2,6 +2,7 @@ export const ELEMENTHTML = {
     title : document.querySelector("head title"),
     worker : [...document.querySelectorAll(".photographer")],
     tagNavigation : [...document.querySelectorAll(".index_nav a")],
+    allTags : document.querySelector(".all_tags"),
     namePhotographer : [...document.querySelectorAll(".name_photographer")],
     country : [...document.querySelectorAll(".moreinfo__country")],
     slogan : [...document.querySelectorAll(".moreinfo__slogan")],

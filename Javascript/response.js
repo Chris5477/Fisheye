@@ -1,5 +1,6 @@
 import { ELEMENTHTML, ELEMENTBTN, ELEMENTFORM } from "./constant.js";
-import { previousPicture, nextPicture, keyboardLightbox, dataProfil, sortJson, utilData, showPicture, showVideo, sortPicture, onlyPicture} from "./function.js";
+import { dataProfil, sortJson, utilData, showPicture, showVideo, sortPicture, onlyPicture} from "./function.js";
+import { previousPicture, nextPicture, keyboardLightbox} from "./app.js";
 
 export const responsePromise = (data) => {
 
@@ -8,18 +9,42 @@ export const responsePromise = (data) => {
   
   if (ELEMENTHTML.title.innerHTML == "Mimi Keel | FishEye") {
 
+    // On recupere les donnees JSON qui me sont utiles (titre , likes , date ...)
     dataProfil(objPhotographer, 0);
+
+    // On isole toutes les données concernant mimi grace a son id 
     const mimi = sortJson(objMedia, 243);
+
+    // On recupere les donnees JSON qui me sont utiles (titre , likes , date ...)
     const metaData = utilData(mimi, "Mimi");
+
+    // Isolalement des photos de mimi
     const mimiPicture = onlyPicture(metaData)
+
+    //Afficher les images sur le navigateur
     showPicture(metaData);
+
+    //Afficher les vidéos sur le navigateur
     const videoMember = showVideo("Mimi",mimi);
+
+    // Fusion du tableau videoMember et mimiPicture pour la lightbox
     const allMedia = videoMember.concat(mimiPicture);
+
+    //Au changement de valeur pour le select , tri les images par titre date ou popularité
     ELEMENTFORM.select.addEventListener("input",() => sortPicture(metaData));
+
+    //Au clique de l 'element liked , incremente le nombre de like
     ELEMENTHTML.liked.forEach((el,key) => el.addEventListener("click",() =>  el.innerHTML = metaData[key].likes++))
+
+    // Au clique sur le bouton previous , reviens sur l image precedente
     ELEMENTBTN.btnPrevious.addEventListener("click", () => previousPicture(allMedia, "Mimi"));
+
+    // Au clique sur le bouton next , passe à l'image suivante
     ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture(allMedia, "Mimi"));
+
+    //Permet de naviguer sur la lightbox au clavier
     document.addEventListener("keydown", (event) => keyboardLightbox(allMedia, "Mimi"));
+
   }
 
   if (ELEMENTHTML.title.innerHTML == "Ellie-Rose Wilkens | FishEye") {

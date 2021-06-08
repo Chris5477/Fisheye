@@ -2,17 +2,10 @@
   @include size-container(100%, 100%);
   @include flex(space-between, center);
   .btn {
-    padding: 15px;
-    font-size: 20px;
-    .fa-chevron-left,
-    .fa-chevron-right {
-      color: $txt-bgwhite;
-    }
-  }
+    padding: 10px;
+    font-size: 15px;
 }
-.photo {
-  max-height: none;
-  height: 80vh;
-  width: 80%;
-  object-fit: contain;
+.photo, .video {
+  top: 55%;
+}
 }

@@ -59,6 +59,7 @@
   @include flex(center, center);
   flex-direction: column;
   margin: 40px 0;
+  text-align: center;
   &__profil {
     @include flex(center, center);
     flex-direction: column;
@@ -92,7 +93,7 @@
   }
   &__price {
     color: $txt-bglight;
-    font-weight: 10px;
+    font-weight: 100;
   }
   &--nomargin {
     margin: 4px 0;

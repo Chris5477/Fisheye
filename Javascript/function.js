@@ -1,4 +1,12 @@
-import { ELEMENTBTN, ELEMENTHTML, ELEMENTMODAL, ELEMENTFORM } from "./constant.js";
+import {ELEMENTHTML, ELEMENTMODAL, ELEMENTFORM } from "./constant.js";
+
+
+
+// fonction pour réafficher tout les photographes en cliquant sur le tag all 
+export const showAllTags = () => {
+  ELEMENTHTML.worker.forEach(item => item.style.display ="initial")
+}
+
 
 // fonction pour afficher les information du photographe
 
@@ -54,16 +62,14 @@ export const showVideo = (photographerName, arr) => {
   const onlyVideo = arr.filter((item) => item.video);
   const movies = [];
   movies.push({
-    description: onlyVideo[0].description,
     title: onlyVideo[0].title,
     likes: onlyVideo[0].likes,
     video: onlyVideo[0].video,
   });
   ELEMENTHTML.video.setAttribute("src", "ressources/" + photographerName + "/" + onlyVideo[0].video);
-  ELEMENTHTML.video.setAttribute("aria-label", onlyVideo[0].description);
   ELEMENTHTML.legendVideo.innerHTML = onlyVideo[0].title;
   ELEMENTHTML.likedVideo.innerHTML = onlyVideo[0].likes;
-  return movies.map((item) => item.video);
+  return movies.map(item => item.video);
 };
 
 //fonction permettant de trier les photos par date , popularité et titre
@@ -118,79 +124,21 @@ export const showElement = () => {
   ELEMENTHTML.header.className = "pages-header";
 };
 
-let i = 0;
 
-const pictureInLightbox = (source) => {
+export const pictureInLightbox = (source) => {
   ELEMENTHTML.movie.style.visibility ="hidden";
   ELEMENTHTML.photo.style.visibility ="visible";
   ELEMENTHTML.photo.setAttribute("src", source);
 };
 
-const videoInLightbox = (member, source) => {
+export const videoInLightbox = (member, source) => {
   ELEMENTHTML.movie.style.visibility ="visible";
   ELEMENTHTML.photo.style.visibility ="hidden";
   ELEMENTHTML.movie.setAttribute("src", "ressources/" + member + "/" + source);
   ELEMENTHTML.movie.setAttribute("autoplay", true);
 };
 
-//fonction permettant de revenir à l'image précédente
 
-export const previousPicture = (array, member) => {
-  ELEMENTBTN.btnNext.removeAttribute("disabled");
-  i--;
-  if (i === 0) {
-    ELEMENTBTN.btnPrevious.setAttribute("disabled", "true");
-  }
-  const srcm = array[i];
-  console.log(srcm);
-  return srcm.match("jpg") ? pictureInLightbox(srcm) : videoInLightbox(member ,srcm);
-};
-
-// fonction permettant de passer à l'image suivante
-
-export const nextPicture = (array, member) => {
-  ELEMENTBTN.btnPrevious.removeAttribute("disabled");
-  i++;
-  if (i == array.length) {
-    i--;
-    ELEMENTBTN.btnNext.setAttribute("disabled", "true");
-  }
-  const srcm = array[i];
-  console.log(srcm);
-  return srcm.match("jpg") ? pictureInLightbox(srcm) : videoInLightbox(member, srcm);
-};
-
-// fonction qui permet la navigation au clavier sur la lightbox
-
-export const keyboardLightbox = (array, member) => {
-  const trigger = event.key;
-  const srcm = array[i];
-  console.log(srcm);
-
-  if (trigger === "ArrowLeft") {
-    ELEMENTBTN.btnNext.removeAttribute("disabled");
-    i--;
-    if (i < 0) {
-      i++;
-      ELEMENTBTN.btnPrevious.setAttribute("disabled", "true");
-    }
-    return srcm.match("jpg") ? pictureInLightbox(srcm) : videoInLightbox(member, srcm);
-    
-  }
-  if (trigger === "ArrowRight") {
-    ELEMENTBTN.btnPrevious.removeAttribute("disabled");
-    i++;
-    if (i == array.length) {
-      i--;
-      ELEMENTBTN.btnNext.setAttribute("disabled", "true");
-    }
-    return srcm.match("jpg") ? pictureInLightbox(srcm) : videoInLightbox(member, srcm);
-  }
-
-  if (trigger === "Escape") {
-    closeLightbox();
-  }
-};
 
 //fonction qui ferme la light box
 

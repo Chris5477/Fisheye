@@ -174,17 +174,9 @@ body {
   color: #901c1c;
 }
 
-.photo {
+.photo, .movie {
   width: 70%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  object-fit: contain;
-}
-
-.movie {
-  width: 80%;
+  height: 700px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -290,6 +282,7 @@ body {
   align-items: center;
   flex-direction: column;
   margin: 40px 0;
+  text-align: center;
 }
 .photographer__profil {
   display: flex;
@@ -326,7 +319,7 @@ body {
 }
 .moreinfo__price {
   color: #525252;
-  font-weight: 10px;
+  font-weight: 100;
 }
 .moreinfo--nomargin {
   margin: 4px 0;
@@ -367,7 +360,7 @@ body {
 }
 .info_photographer__country {
   color: #901c1c;
-  font-size: 22px;
+  font-size: 20px;
   margin: 5px 30px;
 }
 .info_photographer__slogan {
@@ -566,7 +559,7 @@ option {
   }
   .profil_photographer__name {
     color: #d3573c;
-    font-size: 20px;
+    font-size: 25px;
     margin: 0px 30px;
   }
 
@@ -693,19 +686,11 @@ option {
     align-items: center;
   }
   .content_lightbox .btn {
-    padding: 15px;
-    font-size: 20px;
+    padding: 10px;
+    font-size: 15px;
   }
-  .content_lightbox .btn .fa-chevron-left,
-.content_lightbox .btn .fa-chevron-right {
-    color: #901c1c;
-  }
-
-  .photo {
-    max-height: none;
-    height: 80vh;
-    width: 80%;
-    object-fit: contain;
+  .content_lightbox .photo, .content_lightbox .video {
+    top: 55%;
   }
 
   .head_forms h1 {

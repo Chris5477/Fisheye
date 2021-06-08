@@ -1,6 +1,6 @@
-Réalisation du site FishEye peremttant de proposer à une clientèle des photographes.
-Ce site doit être respecté les normes WCAG .
+Projet en attente de validation 
 
-1 ere etape réaliser la maquette du site et la styliser et la rendre respnsive ==> Fait ( a peaufiner à la fin )
-2 eme etape rendre le site accessible et validation WCAG ==> aucune erreur sur Wave et aXe sauf pour sous titre vidéo , score accessibilité 100% sur lighthouse
-3 eme etape , utilisation des données JSON pour une écriture dynamique
+Toutes les pages HTML sont validés par W3C
+Le css est validé par W3C
+Toutes les pages sont sans erreurs sur wave et aXeTool (ormis une pour le son vidéo sur wave)
+accessibilité noté 100% sur lightHouse

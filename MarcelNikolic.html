@@ -15,9 +15,9 @@
         <a aria-label="Retour page d'acceuil" class="img_link" href="index.html"><img class="logo" src="ressources/Logo_FishEye.png" alt="FishEye Home Page" /></a>
     </header>
     <main class="pages-main">
-        <div role="contentinfo" class="content_profil">
+        <div class="content_profil">
             <header class="profil_photographer">
-                <h1 class="profil_photographer__name">Marcel Nikolic</h1>
+                <h1 tabindex="0" class="profil_photographer__name">Marcel Nikolic</h1>
                 <button aria-label="Contactez-moi"  class="contact_photographer">Contactez-moi</button>
             </header>
             <article tabindex="0" aria-label="Information sur Marcel Nikolic" class="info_photographer">     
@@ -27,9 +27,7 @@
                     <span class="tagofphotographer"></span>
                     <span class="tagofphotographer"></span>
                 </div>
-                <aside>
                     <img tabindex="0" aria-label="Photo de Marcel Nikolic" class="picture-profil" src="ressources/Photographes/MarcelNikolic.jpg" alt="Marcel Nikolic">  
-                </aside>
             </article>
         </div>
         <section tabindex="0" aria-label="Travaux du photographe" class="work_photographer">
@@ -108,7 +106,9 @@
                 </div>
                 <div class="picture">
                     <figure>
-                        <video tabindex="0" class="media video" src="." controls></video>
+                        <video tabindex="0" class="media video" src="." controls>
+                            <track kind="captions" src="caption_video/marcel.vtt" srclang="fr" label="sous-titre français">
+                        </video>
                         <figcaption tabindex="0" class="describe-video"></figcaption>
                     </figure>
                     <span class="count_like_video fas fa-heart"></span>
@@ -153,7 +153,9 @@
             <button aria-label="Image précédente" class="btn previous"><span class="fas fa-chevron-left"></span></button>
             <figure>
                 <img class="photo" src="." alt="">
-                <video class="movie" src="."></video>
+                <video class="movie" src=".">
+                    <track kind="captions" src="caption_video/marcel.vtt" srclang="fr" label="sous-titre français">
+                </video>
                 <figcaption></figcaption>
             </figure>
             <button aria-label="image suivante" class="btn next"><span class="fas fa-chevron-right"></span></button>
