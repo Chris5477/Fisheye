@@ -15,6 +15,9 @@ export const responsePromise = (data) => {
     // On isole toutes les données concernant mimi grace a son id 
     const mimi = sortJson(objMedia, 243);
 
+    //Affiche le total de contenu du photographe
+    ELEMENTHTML.totalMedia.innerHTML=`La galerie de ce photographe content ${mimi.length} photos/videos`;
+
     // On recupere les donnees JSON qui me sont utiles (titre , likes , date ...)
     const metaData = utilData(mimi, "Mimi");
 
@@ -47,9 +50,12 @@ export const responsePromise = (data) => {
 
   }
 
+  
+
   if (ELEMENTHTML.title.innerHTML == "Ellie-Rose Wilkens | FishEye") {
     dataProfil(objPhotographer, 1);
     const ellie = sortJson(objMedia, 930);
+    ELEMENTHTML.totalMedia.innerHTML=`La galerie de ce photographe content ${ellie.length} photos/videos`;
     const metaData = utilData(ellie, "Ellie_Rose");
     const elliePicture = onlyPicture(metaData)
     showPicture(metaData);
@@ -65,8 +71,9 @@ export const responsePromise = (data) => {
   }
 
   if (ELEMENTHTML.title.innerHTML == "Tracy Galindo | FishEye") {
-    const tracy = sortJson(objMedia, 82);
     dataProfil(objPhotographer, 2);
+    const tracy = sortJson(objMedia, 82);
+    ELEMENTHTML.totalMedia.innerHTML=`La galerie de ce photographe content ${tracy.length} photos/videos`;
     const metaData = utilData(tracy, "Tracy");
     const tracyPicture = onlyPicture(metaData)
     ELEMENTFORM.select.addEventListener("input",() => sortPicture(metaData));
@@ -83,6 +90,7 @@ export const responsePromise = (data) => {
   if (ELEMENTHTML.title.innerHTML == "Nabeel Bradford | FishEye") {
     dataProfil(objPhotographer, 3);
     const nabeel = sortJson(objMedia, 527);
+    ELEMENTHTML.totalMedia.innerHTML=`La galerie de ce photographe content ${nabeel.length} photos/videos`;
     const metaData = utilData(nabeel, "Nabeel");
     const nabeelPicture = onlyPicture(metaData)
     ELEMENTFORM.select.addEventListener("input",() => sortPicture(metaData));
@@ -99,6 +107,7 @@ export const responsePromise = (data) => {
   if (ELEMENTHTML.title.innerHTML == "Rhode Dubois | FishEye") {
     dataProfil(objPhotographer, 4);
     const rhode = sortJson(objMedia, 925);
+    ELEMENTHTML.totalMedia.innerHTML=`La galerie de ce photographe content ${rhode.length} photos/videos`;
     const metaData = utilData(rhode, "Rhode");
     const rhodePicture = onlyPicture(metaData)
     ELEMENTFORM.select.addEventListener("input",() => sortPicture(metaData));
@@ -115,6 +124,7 @@ export const responsePromise = (data) => {
   if (ELEMENTHTML.title.innerHTML == "Marcel Nikolic | FishEye") {
     dataProfil(objPhotographer, 5);
     const marcel = sortJson(objMedia, 195);
+    ELEMENTHTML.totalMedia.innerHTML=`La galerie de ce photographe content ${marcel.length} photos/videos`;
     const metaData = utilData(marcel, "Marcel");
     const marcelPicture = onlyPicture(metaData)
     ELEMENTFORM.select.addEventListener("input",() => sortPicture(metaData));

@@ -95,7 +95,11 @@ option {
   display: grid;
   grid-template-columns: repeat(auto-fill, 400px);
   grid-gap: 50px;
+  .date_picture, .date_video{
+    color: $txt-bgwhite;
+  }
 }
+
 
 .picture {
   margin: 0;

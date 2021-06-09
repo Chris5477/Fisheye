@@ -207,8 +207,12 @@ body {
   width: 95%;
   height: 10vh;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
+}
+.pages-header .total_media {
+  color: #901c1c;
+  padding-right: 10px;
 }
 
 .link_anchor {
@@ -437,6 +441,9 @@ option {
   grid-template-columns: repeat(auto-fill, 400px);
   grid-gap: 50px;
 }
+.container-picture .date_picture, .container-picture .date_video {
+  color: #901c1c;
+}
 
 .picture {
   margin: 0;
@@ -551,6 +558,9 @@ option {
   .pages-header img {
     padding-left: 25px;
     width: 60%;
+  }
+  .pages-header .total_media {
+    font-size: 12px;
   }
 
   .profil_photographer {

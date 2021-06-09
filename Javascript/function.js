@@ -12,6 +12,7 @@ export const showAllTags = () => {
 
 export const dataProfil = (obj, key) => {
   ELEMENTHTML.nameMember.textContent = obj[key].name;
+  ELEMENTHTML.pictureProfil.setAttribute("src", "ressources/Photographes/" +obj[key].portrait)
   ELEMENTHTML.localisationMember.textContent = obj[key].country + "," + obj[key].city;
   ELEMENTHTML.sloganMember.textContent = obj[key].tagline;
   ELEMENTHTML.pricePhotographer.textContent = obj[key].price + "€/jour";
@@ -50,6 +51,7 @@ export const onlyPicture = (arr) => arr.map((item) => item.image);
 export const showPicture = (arr) => {
   ELEMENTHTML.legend.forEach((item, key) => (item.innerHTML = arr[key].title));
   ELEMENTHTML.liked.forEach((item, key) => (item.innerHTML = " " + arr[key].likes));
+  ELEMENTHTML.dateMedia.forEach((item, key) => item.innerHTML = arr[key].date);
   ELEMENTHTML.allPicturePhotographer.map((item, key) => {
     item.setAttribute("src", arr[key].image);
     item.setAttribute("aria-label", arr[key].description);
@@ -65,9 +67,11 @@ export const showVideo = (photographerName, arr) => {
     title: onlyVideo[0].title,
     likes: onlyVideo[0].likes,
     video: onlyVideo[0].video,
+    date: onlyVideo[0].date
   });
   ELEMENTHTML.video.setAttribute("src", "ressources/" + photographerName + "/" + onlyVideo[0].video);
   ELEMENTHTML.legendVideo.innerHTML = onlyVideo[0].title;
+  ELEMENTHTML.dateVideo.innerHTML = onlyVideo[0].date;
   ELEMENTHTML.likedVideo.innerHTML = onlyVideo[0].likes;
   return movies.map(item => item.video);
 };

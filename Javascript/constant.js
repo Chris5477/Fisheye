@@ -3,12 +3,15 @@ export const ELEMENTHTML = {
     worker : [...document.querySelectorAll(".photographer")],
     tagNavigation : [...document.querySelectorAll(".index_nav a")],
     allTags : document.querySelector(".all_tags"),
+    dateMedia : [...document.querySelectorAll(".date_picture")],
+    dateVideo : document.querySelector(".date_video"),
     namePhotographer : [...document.querySelectorAll(".name_photographer")],
     country : [...document.querySelectorAll(".moreinfo__country")],
     slogan : [...document.querySelectorAll(".moreinfo__slogan")],
     price : [...document.querySelectorAll(".moreinfo__price")],
     tags : [...document.querySelectorAll(".tag")],
     header : document.querySelector(".pages-header"),
+    pictureProfil : document.querySelector(".picture-profil"),
     mainPageElement : document.querySelector(".pages-main"),
     allPicturePhotographer :[...document.querySelectorAll(".img")],
     allMedia : [...document.querySelectorAll(".media")],
@@ -20,6 +23,7 @@ export const ELEMENTHTML = {
     sloganMember : document.querySelector(".info_photographer__slogan"),
     tagsMember : [...document.querySelectorAll(".tagofphotographer")],
     pricePhotographer : document.querySelector(".price"),
+    totalMedia : document.querySelector(".total_media"),
     liked : [...document.querySelectorAll(".count_like")],
     likedVideo : document.querySelector(".count_like_video"),
     video : document.querySelector("video"),
@@ -34,6 +38,7 @@ export const ELEMENTMODAL = {
 export const ELEMENTFORM = {
     formContact : document.querySelector(".forms_photographer"),
     input : [...document.querySelectorAll("input")],
+    mail : document.querySelector("input[type=email]"),
     message : document.querySelector("textarea"),
     boxData : [...document.querySelectorAll(".formData")],
     select : document.querySelector("select")
@@ -53,6 +58,7 @@ export const ELEMENTBTN = {
 export const GETMSG = {
     0 : { msg : "Ce champs est obligatoire et doit contenir 2 caractères minimum"},
     1: { msg : "Ce champs est obligatoire et doit contenir 20 caractères minimum"},
-    2 : { msg : "Succès de l'envoi de votre message"}
+    2: { msg : "Veuillez indiquer une adresse mail valide"},
+    3 : { msg : "Succès de l'envoi de votre message"}
 }
 

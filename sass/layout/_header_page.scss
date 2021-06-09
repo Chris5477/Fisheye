@@ -1,5 +1,10 @@
 .pages-header{
     @include size-container(95%,10vh);
-    @include flex(flex-start, center);
+    @include flex(space-between, center);
+    .total_media{
+        color: $txt-bgwhite;
+        padding-right: 10px;
+
+    }
    
 }
