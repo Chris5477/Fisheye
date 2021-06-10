@@ -1,141 +1,172 @@
-import { ELEMENTHTML, ELEMENTBTN, ELEMENTFORM } from "./constant.js";
-import { dataProfil, sortJson, utilData, showPicture, showVideo, sortPicture, onlyPicture} from "./function.js";
-import { previousPicture, nextPicture, keyboardLightbox} from "./app.js";
+import { ELEMENTHTML, ELEMENTBTN, ELEMENTFORM, ELEMENTMODAL } from "./constant.js";
+import {
+  dataProfil,
+  sortJson,
+  createElements,
+  showMedia,
+  newContainer,
+  sortMedia,
+  hiddenElement,
+  pictureInLightbox,
+  videoInLightbox,
+  closeLightbox,
+} from "./function.js";
 
 export const responsePromise = (data) => {
-
   const objPhotographer = data.photographers;
   const objMedia = data.media;
-  
+
   if (ELEMENTHTML.title.innerHTML == "Mimi Keel | FishEye") {
-
-    // On recupere les donnees JSON qui me sont utiles (titre , likes , date ...)
     dataProfil(objPhotographer, 0);
-
-    // On isole toutes les données concernant mimi grace a son id 
     const mimi = sortJson(objMedia, 243);
+    ELEMENTHTML.totalMedia.innerHTML = `La galerie de ce photographe content ${mimi.length} photos/videos`;
+    createElements(mimi);
+    showMedia(mimi, "Mimi");
+    newContainer(mimi, "Mimi");
+    ELEMENTFORM.select.addEventListener("input", () => sortMedia(mimi, "Mimi"));
 
-    //Affiche le total de contenu du photographe
-    ELEMENTHTML.totalMedia.innerHTML=`La galerie de ce photographe content ${mimi.length} photos/videos`;
+    const urlMedia = mimi.map((item) => (item.image != undefined ? "ressources/Mimi/" + item.image : "ressources/Mimi/" + item.video));
 
-    // On recupere les donnees JSON qui me sont utiles (titre , likes , date ...)
-    const metaData = utilData(mimi, "Mimi");
+    let keyPicture = null;
+    const allMedia = [...document.querySelectorAll(".media")];
+    allMedia.forEach((el, key) => {
+      el.addEventListener("click", () => {
+        ELEMENTMODAL.lightBox.classList.add("show_lightbox");
+        hiddenElement();
+        const srcMedia = el.getAttribute("src");
+        srcMedia.match("jpg") ? ELEMENTHTML.photo.setAttribute("src", srcMedia) : ELEMENTHTML.movie.setAttribute("src", srcMedia);
+        keyPicture = key;
+        return keyPicture;
+      });
+    });
 
-    // Isolalement des photos de mimi
-    const mimiPicture = onlyPicture(metaData)
+    allMedia.forEach((el) =>
+      el.addEventListener("keydown", (event) => {
+        const trigger = event.key;
+        if (trigger === "Enter") {
+          ELEMENTMODAL.lightBox.classList.add("show_lightbox");
+          hiddenElement();
+          const srcMedia = el.getAttribute("src");
+          srcMedia.match("jpg") ? ELEMENTHTML.photo.setAttribute("src", srcMedia) : ELEMENTHTML.movie.setAttribute("src", srcMedia);
+        }
+      })
+    );
 
-    //Afficher les images sur le navigateur
-    showPicture(metaData);
+    const btnPrev = document.querySelector(".previous");
+    const btnNext = document.querySelector(".next");
+    const previousPicture = () => {
+      btnNext.removeAttribute("disabled");
+      keyPicture--;
+      keyPicture === 0 ? btnPrev.setAttribute("disabled", "true") : "";
+      const sourceMedia = urlMedia[keyPicture];
+      return sourceMedia.match("jpg") ? pictureInLightbox(sourceMedia) : videoInLightbox(sourceMedia);
+    };
+    btnPrev.addEventListener("click", () => previousPicture());
 
-    //Afficher les vidéos sur le navigateur
-    const videoMember = showVideo("Mimi",mimi);
+    const nextPicture = () => {
+      btnPrev.removeAttribute("disabled");
+      keyPicture++;
+      keyPicture == urlMedia.length ? keyPicture-- && btnNext.setAttribute("disabled", "true") : "";
+      const sourceMedia = urlMedia[keyPicture];
+      return sourceMedia.match("jpg") ? pictureInLightbox(sourceMedia) : videoInLightbox(sourceMedia);
+    };
 
-    // Fusion du tableau videoMember et mimiPicture pour la lightbox
-    const allMedia = videoMember.concat(mimiPicture);
+    document.addEventListener("keydown", (event) => keyboardLightbox());
 
-    //Au changement de valeur pour le select , tri les images par titre date ou popularité
-    ELEMENTFORM.select.addEventListener("input",() => sortPicture(metaData));
+    ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture());
 
-    //Au clique de l 'element liked , incremente le nombre de like
-    ELEMENTHTML.liked.forEach((el,key) => el.addEventListener("click",() =>  el.innerHTML = metaData[key].likes++))
+    const keyboardLightbox = () => {
+      const trigger = event.key;
+      const sourceMedia = urlMedia[keyPicture];
+      if (trigger === "ArrowLeft") {
+        btnNext.removeAttribute("disabled");
+        keyPicture--;
+        if (keyPicture < 0) {
+          keyPicture++;
+          btnPrev.setAttribute("disabled", "true");
+        }
+        return sourceMedia.match("jpg") ? pictureInLightbox(sourceMedia) : videoInLightbox(sourceMedia);
+      }
+      if (trigger === "ArrowRight") {
+        btnPrev.removeAttribute("disabled");
+        keyPicture++;
+        if (keyPicture == urlMedia.length) {
+          keyPicture--;
+          btnNext.setAttribute("disabled", "true");
+        }
+        return sourceMedia.match("jpg") ? pictureInLightbox(sourceMedia) : videoInLightbox(sourceMedia);
+      }
 
-    // Au clique sur le bouton previous , reviens sur l image precedente
-    ELEMENTBTN.btnPrevious.addEventListener("click", () => previousPicture(allMedia, "Mimi"));
+      if (trigger === "Escape") {
+        closeLightbox();
+      }
 
-    // Au clique sur le bouton next , passe à l'image suivante
-    ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture(allMedia, "Mimi"));
+      ELEMENTBTN.btnCloseLightbox.addEventListener("click", closeLightbox);
+    };
 
-    //Permet de naviguer sur la lightbox au clavier
-    document.addEventListener("keydown", (event) => keyboardLightbox(allMedia, "Mimi"));
-
+    const icon = [...document.querySelectorAll(".fa-heart")];
+    const liked = [...document.querySelectorAll(".count_like")];
+    icon.forEach((el, key) => el.addEventListener("click", () => (liked[key].innerHTML = mimi[key].likes++)));
   }
+    if (ELEMENTHTML.title.innerHTML == "Ellie-Rose Wilkens | FishEye") {
+      dataProfil(objPhotographer, 1);
+      const ellie = sortJson(objMedia, 930);
+      ELEMENTHTML.totalMedia.innerHTML = `La galerie de ce photographe content ${ellie.length} photos/videos`;
+      createElements(ellie);
+      showMedia(ellie, "Ellie_Rose");
+      newContainer(ellie, "Ellie_Rose");
+      ELEMENTFORM.select.addEventListener("input", () => sortMedia(ellie, "Ellie_Rose"));
+      const icon = [...document.querySelectorAll(".fa-heart")];
+      const liked = [...document.querySelectorAll(".count_like")];
+      icon.forEach((el, key) => el.addEventListener("click", () => (liked[key].innerHTML = ellie[key].likes++)));
+    }
 
-  
+    if (ELEMENTHTML.title.innerHTML == "Tracy Galindo | FishEye") {
+      dataProfil(objPhotographer, 2);
+      const tracy = sortJson(objMedia, 82);
+      ELEMENTHTML.totalMedia.innerHTML = `La galerie de ce photographe content ${tracy.length} photos/videos`;
+      showMedia(tracy, "Tracy");
+      newContainer(tracy, "Tracy");
+      ELEMENTFORM.select.addEventListener("input", () => sortMedia(tracy, "Tracy"));
+      const icon = [...document.querySelectorAll(".fa-heart")];
+      const liked = [...document.querySelectorAll(".count_like")];
+      icon.forEach((el, key) => el.addEventListener("click", () => (liked[key].innerHTML = tracy[key].likes++)));
+    }
 
-  if (ELEMENTHTML.title.innerHTML == "Ellie-Rose Wilkens | FishEye") {
-    dataProfil(objPhotographer, 1);
-    const ellie = sortJson(objMedia, 930);
-    ELEMENTHTML.totalMedia.innerHTML=`La galerie de ce photographe content ${ellie.length} photos/videos`;
-    const metaData = utilData(ellie, "Ellie_Rose");
-    const elliePicture = onlyPicture(metaData)
-    showPicture(metaData);
-    const videoMember = showVideo("ELlie_Rose",ellie);
-    const allMedia = videoMember.concat(elliePicture);
-    ELEMENTFORM.select.addEventListener("input",() => sortPicture(metaData));
-    ELEMENTHTML.liked.forEach((el,key) => el.addEventListener("click",() =>  el.innerHTML = metaData[key].likes++))
-    ELEMENTBTN.btnPrevious.addEventListener("click", () => previousPicture(allMedia, "Ellie_Rose"));
-    ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture(allMedia, "Ellie_Rose"));
-    document.addEventListener("keydown", (event) => keyboardLightbox(allMedia, "Ellie_Rose"));
-    showVideo("Ellie_Rose", ellie)
-    
-  }
+    if (ELEMENTHTML.title.innerHTML == "Nabeel Bradford | FishEye") {
+      dataProfil(objPhotographer, 3);
+      const nabeel = sortJson(objMedia, 527);
+      ELEMENTHTML.totalMedia.innerHTML = `La galerie de ce photographe content ${nabeel.length} photos/videos`;
+      showMedia(nabeel, "Nabeel");
+      newContainer(nabeel, "Nabeel");
+      ELEMENTFORM.select.addEventListener("input", () => sortMedia(nabeel, "Nabeel"));
+      const icon = [...document.querySelectorAll(".fa-heart")];
+      const liked = [...document.querySelectorAll(".count_like")];
+      icon.forEach((el, key) => el.addEventListener("click", () => (liked[key].innerHTML = nabeel[key].likes++)));
+    }
 
-  if (ELEMENTHTML.title.innerHTML == "Tracy Galindo | FishEye") {
-    dataProfil(objPhotographer, 2);
-    const tracy = sortJson(objMedia, 82);
-    ELEMENTHTML.totalMedia.innerHTML=`La galerie de ce photographe content ${tracy.length} photos/videos`;
-    const metaData = utilData(tracy, "Tracy");
-    const tracyPicture = onlyPicture(metaData)
-    ELEMENTFORM.select.addEventListener("input",() => sortPicture(metaData));
-    showPicture(metaData);
-    const videoMember = showVideo("Tracy", tracy);
-    const allMedia = videoMember.concat(tracyPicture);
-    ELEMENTHTML.liked.forEach((el,key) => el.addEventListener("click",() =>  el.innerHTML = metaData[key].likes++))
-    ELEMENTBTN.btnPrevious.addEventListener("click", () => previousPicture(allMedia, "Tracy"));
-    ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture(allMedia, "Tracy"));
-    document.addEventListener("keydown", (event) => keyboardLightbox(allMedia, "Tracy"));
-    showVideo("Tracy", tracy)
-  }
+    if (ELEMENTHTML.title.innerHTML == "Rhode Dubois | FishEye") {
+      dataProfil(objPhotographer, 4);
+      const rhode = sortJson(objMedia, 925);
+      ELEMENTHTML.totalMedia.innerHTML = `La galerie de ce photographe content ${rhode.length} photos/videos`;
+      showMedia(rhode, "Rhode");
+      newContainer(rhode, "Rhode");
+      ELEMENTFORM.select.addEventListener("input", () => sortMedia(rhode, "Rhode"));
+      const icon = [...document.querySelectorAll(".fa-heart")];
+      const liked = [...document.querySelectorAll(".count_like")];
+      icon.forEach((el, key) => el.addEventListener("click", () => (liked[key].innerHTML = rhode[key].likes++)));
+    }
 
-  if (ELEMENTHTML.title.innerHTML == "Nabeel Bradford | FishEye") {
-    dataProfil(objPhotographer, 3);
-    const nabeel = sortJson(objMedia, 527);
-    ELEMENTHTML.totalMedia.innerHTML=`La galerie de ce photographe content ${nabeel.length} photos/videos`;
-    const metaData = utilData(nabeel, "Nabeel");
-    const nabeelPicture = onlyPicture(metaData)
-    ELEMENTFORM.select.addEventListener("input",() => sortPicture(metaData));
-    showPicture(metaData);
-    const videoMember = showVideo("Nabeel", nabeel);
-    const allMedia = videoMember.concat(nabeelPicture);
-    ELEMENTHTML.liked.forEach((el,key) => el.addEventListener("click",() =>  el.innerHTML = metaData[key].likes++))
-    ELEMENTBTN.btnPrevious.addEventListener("click", () => previousPicture(allMedia, "Nabeel"));
-    ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture(allMedia, "Nabeel"));
-    document.addEventListener("keydown", (event) => keyboardLightbox(allMedia, "Nabeel"));
-    showVideo("Nabeel", nabeel)
-  }
-
-  if (ELEMENTHTML.title.innerHTML == "Rhode Dubois | FishEye") {
-    dataProfil(objPhotographer, 4);
-    const rhode = sortJson(objMedia, 925);
-    ELEMENTHTML.totalMedia.innerHTML=`La galerie de ce photographe content ${rhode.length} photos/videos`;
-    const metaData = utilData(rhode, "Rhode");
-    const rhodePicture = onlyPicture(metaData)
-    ELEMENTFORM.select.addEventListener("input",() => sortPicture(metaData));
-    showPicture(metaData);
-    const videoMember = showVideo("Rhode", rhode);
-    const allMedia = videoMember.concat(rhodePicture);
-    ELEMENTHTML.liked.forEach((el,key) => el.addEventListener("click",() =>  el.innerHTML = metaData[key].likes++))
-    ELEMENTBTN.btnPrevious.addEventListener("click", () => previousPicture(allMedia, "Rhode"));
-    ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture(allMedia, "Rhode"));
-    document.addEventListener("keydown", (event) => keyboardLightbox(allMedia, "Rhode"));
-    showVideo("Rhode", rhode)
-  }
-
-  if (ELEMENTHTML.title.innerHTML == "Marcel Nikolic | FishEye") {
-    dataProfil(objPhotographer, 5);
-    const marcel = sortJson(objMedia, 195);
-    ELEMENTHTML.totalMedia.innerHTML=`La galerie de ce photographe content ${marcel.length} photos/videos`;
-    const metaData = utilData(marcel, "Marcel");
-    const marcelPicture = onlyPicture(metaData)
-    ELEMENTFORM.select.addEventListener("input",() => sortPicture(metaData));
-    showPicture(metaData);
-    const videoMember = showVideo("Marcel",marcel);
-    const allMedia = videoMember.concat(marcelPicture);
-    ELEMENTHTML.liked.forEach((el,key) => el.addEventListener("click",() =>  el.innerHTML = metaData[key].likes++))
-    ELEMENTBTN.btnPrevious.addEventListener("click", () => previousPicture(allMedia, "Marcel"));
-    ELEMENTBTN.btnNext.addEventListener("click", () => nextPicture(allMedia, "Marcel"));
-    document.addEventListener("keydown", (event) => keyboardLightbox(allMedia, "Marcel"));
-    showVideo("Marcel", marcel)
-  }
+    if (ELEMENTHTML.title.innerHTML == "Marcel Nikolic | FishEye") {
+      dataProfil(objPhotographer, 5);
+      const marcel = sortJson(objMedia, 195);
+      ELEMENTHTML.totalMedia.innerHTML = `La galerie de ce photographe content ${marcel.length} photos/videos`;
+      showMedia(marcel, "Marcel");
+      newContainer(marcel, "Marcel");
+      ELEMENTFORM.select.addEventListener("input", () => sortMedia(marcel, "Marcel"));
+      const icon = [...document.querySelectorAll(".fa-heart")];
+      const liked = [...document.querySelectorAll(".count_like")];
+      icon.forEach((el, key) => el.addEventListener("click", () => (liked[key].innerHTML = marcel[key].likes++)));
+    }
   
 };

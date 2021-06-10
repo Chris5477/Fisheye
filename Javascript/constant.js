@@ -3,8 +3,6 @@ export const ELEMENTHTML = {
     worker : [...document.querySelectorAll(".photographer")],
     tagNavigation : [...document.querySelectorAll(".index_nav a")],
     allTags : document.querySelector(".all_tags"),
-    dateMedia : [...document.querySelectorAll(".date_picture")],
-    dateVideo : document.querySelector(".date_video"),
     namePhotographer : [...document.querySelectorAll(".name_photographer")],
     country : [...document.querySelectorAll(".moreinfo__country")],
     slogan : [...document.querySelectorAll(".moreinfo__slogan")],
@@ -13,22 +11,19 @@ export const ELEMENTHTML = {
     header : document.querySelector(".pages-header"),
     pictureProfil : document.querySelector(".picture-profil"),
     mainPageElement : document.querySelector(".pages-main"),
-    allPicturePhotographer :[...document.querySelectorAll(".img")],
-    allMedia : [...document.querySelectorAll(".media")],
-    legend : [...document.querySelectorAll(".describe-picture")],
-    legendVideo : document.querySelector(".describe-video"),
+    container : document.querySelector(".container-picture"),
     photo : document.querySelector('.photo'),
+    icon: [...document.querySelectorAll(".fa-heart")],
     nameMember : document.querySelector(".profil_photographer__name"),
     localisationMember : document.querySelector(".info_photographer__country"), 
     sloganMember : document.querySelector(".info_photographer__slogan"),
     tagsMember : [...document.querySelectorAll(".tagofphotographer")],
     pricePhotographer : document.querySelector(".price"),
     totalMedia : document.querySelector(".total_media"),
-    liked : [...document.querySelectorAll(".count_like")],
-    likedVideo : document.querySelector(".count_like_video"),
     video : document.querySelector("video"),
     movie : document.querySelector(".movie")
 }
+
 
 export const ELEMENTMODAL = {
     modal : document.querySelector(".modal_contact"),

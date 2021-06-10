@@ -1,18 +1,13 @@
-import {ELEMENTHTML, ELEMENTMODAL, ELEMENTFORM } from "./constant.js";
+import { ELEMENTHTML, ELEMENTMODAL, ELEMENTFORM } from "./constant.js";
 
 
-
-// fonction pour réafficher tout les photographes en cliquant sur le tag all 
 export const showAllTags = () => {
-  ELEMENTHTML.worker.forEach(item => item.style.display ="initial")
-}
-
-
-// fonction pour afficher les information du photographe
+  ELEMENTHTML.worker.forEach((item) => (item.style.display = "initial"));
+};
 
 export const dataProfil = (obj, key) => {
   ELEMENTHTML.nameMember.textContent = obj[key].name;
-  ELEMENTHTML.pictureProfil.setAttribute("src", "ressources/Photographes/" +obj[key].portrait)
+  ELEMENTHTML.pictureProfil.setAttribute("src", "ressources/Photographes/" + obj[key].portrait);
   ELEMENTHTML.localisationMember.textContent = obj[key].country + "," + obj[key].city;
   ELEMENTHTML.sloganMember.textContent = obj[key].tagline;
   ELEMENTHTML.pricePhotographer.textContent = obj[key].price + "€/jour";
@@ -21,75 +16,79 @@ export const dataProfil = (obj, key) => {
   }
 };
 
-//fonction pour trier les images en fonction de l'id des photographes
-
 export const sortJson = (obj, id) => obj.filter((item) => item.photographerId == id);
 
-// fonction  pour créer un objet contenant toutes les informations d'images
-
-export const utilData = (member, photographerName) => {
-  const array = [];
-  const noVideo = member.filter((item) => item.image != undefined);
-  noVideo.forEach((item) => {
-    array.push({
-      title: item.title,
-      date: item.date,
-      likes: item.likes,
-      description: item.description,
-      image: "ressources/" + photographerName + "/" + item.image,
-    });
-  });
-  return array;
+const createImgElement = () => {
+  ELEMENTHTML.container.innerHTML += `<div role="figure" class="picture">
+    <p tabindex="0" class="date"></p>
+    <figure>
+        <img tabindex="0" class="media" src="" alt=""/>
+        <figcaption tabindex="0" class="title describe-media" lang="en"></figcaption>
+    </figure>
+    <div class="number_like">
+      <span class="count_like"></span>
+      <span class="fas fa-heart"></span>
+    </div>
+  </div>`;
 };
 
-// fonction pour n'avoir que les images
+const createVideoElement = () => {
+  ELEMENTHTML.container.innerHTML += `<div role="figure" class="picture">
+    <p tabindex="0" class="date"></p>
+    <figure>
+        <video tabindex="0" class="media" src="" controls>
+        <track kind="captions" src="caption_video/mimikeel.vtt" srclang="fr" label="sous-titre français">
+    </video>
+        <figcaption tabindex="0" class="title describe-media"></figcaption>
+    </figure>
+    <div class="number_like">
+      <span class="count_like"></span>
+      <span class="fas fa-heart"></span>
+    </div>
+  </div> `;
+};
 
-export const onlyPicture = (arr) => arr.map((item) => item.image);
+export const createElements = (array) => {
+  for (let i = 0; i < array.length; i++) {
+    array[i].hasOwnProperty("image") ? createImgElement() : createVideoElement();
+  }
+};
 
-// fonction pour afficher les images , donner une description audio et une legende
-
-export const showPicture = (arr) => {
-  ELEMENTHTML.legend.forEach((item, key) => (item.innerHTML = arr[key].title));
-  ELEMENTHTML.liked.forEach((item, key) => (item.innerHTML = " " + arr[key].likes));
-  ELEMENTHTML.dateMedia.forEach((item, key) => item.innerHTML = arr[key].date);
-  ELEMENTHTML.allPicturePhotographer.map((item, key) => {
-    item.setAttribute("src", arr[key].image);
-    item.setAttribute("aria-label", arr[key].description);
+export const showMedia = (array, member) => {
+  const legend = [...document.querySelectorAll(".title")];
+  const liked = [...document.querySelectorAll(".count_like")];
+  const dateMedia = [...document.querySelectorAll(".date")];
+  const media = [...document.querySelectorAll(".media")];
+  legend.forEach((item, key) => (item.innerHTML = array[key].title));
+  liked.forEach((item, key) => (item.innerHTML = " " + array[key].likes));
+  dateMedia.forEach((item, key) => (item.innerHTML = array[key].date));
+  media.forEach((item, key) => {
+    array[key].hasOwnProperty("image")
+      ? item.setAttribute("src", `ressources/${member}/${array[key].image}`)
+      : item.setAttribute("src", `ressources/${member}/${array[key].video}`);
   });
 };
 
-//fonction pour recuperer un array avec les videos et les afficher
-
-export const showVideo = (photographerName, arr) => {
-  const onlyVideo = arr.filter((item) => item.video);
-  const movies = [];
-  movies.push({
-    title: onlyVideo[0].title,
-    likes: onlyVideo[0].likes,
-    video: onlyVideo[0].video,
-    date: onlyVideo[0].date
-  });
-  ELEMENTHTML.video.setAttribute("src", "ressources/" + photographerName + "/" + onlyVideo[0].video);
-  ELEMENTHTML.legendVideo.innerHTML = onlyVideo[0].title;
-  ELEMENTHTML.dateVideo.innerHTML = onlyVideo[0].date;
-  ELEMENTHTML.likedVideo.innerHTML = onlyVideo[0].likes;
-  return movies.map(item => item.video);
+export const newContainer = (array, member) => {
+  if (ELEMENTHTML.container.innerHTML != "") {
+    ELEMENTHTML.container.innerHTML = "";
+  }
+  createElements(array);
+  showMedia(array, member);
 };
 
-//fonction permettant de trier les photos par date , popularité et titre
-
-export const sortPicture = (arr) => {
+export const sortMedia = (array, member) => {
   if (ELEMENTFORM.select.value === "popularite") {
-    arr.sort((a, b) => a.likes - b.likes);
-    showPicture(arr);
+    array.sort((a, b) => a.likes - b.likes);
+    newContainer(array, member);
   } else if (ELEMENTFORM.select.value === "date") {
-    arr.sort((a, b) => Date.parse(a.date) - Date.parse(b.date));
-    showPicture(arr);
+    array.sort((a, b) => Date.parse(a.date) - Date.parse(b.date));
+    newContainer(array, member);
   } else if (ELEMENTFORM.select.value === "titre") {
-    arr.sort((a, b) => {
+    array.sort((a, b) => {
       return a.title.localeCompare(b.title);
     });
-    showPicture(arr);
+    newContainer(array, member);
   }
 };
 
@@ -128,23 +127,18 @@ export const showElement = () => {
   ELEMENTHTML.header.className = "pages-header";
 };
 
-
 export const pictureInLightbox = (source) => {
-  ELEMENTHTML.movie.style.visibility ="hidden";
-  ELEMENTHTML.photo.style.visibility ="visible";
+  ELEMENTHTML.movie.style.visibility = "hidden";
+  ELEMENTHTML.photo.style.visibility = "visible";
   ELEMENTHTML.photo.setAttribute("src", source);
 };
 
-export const videoInLightbox = (member, source) => {
-  ELEMENTHTML.movie.style.visibility ="visible";
-  ELEMENTHTML.photo.style.visibility ="hidden";
-  ELEMENTHTML.movie.setAttribute("src", "ressources/" + member + "/" + source);
+export const videoInLightbox = (source) => {
+  ELEMENTHTML.movie.style.visibility = "visible";
+  ELEMENTHTML.photo.style.visibility = "hidden";
+  ELEMENTHTML.movie.setAttribute("src", source);
   ELEMENTHTML.movie.setAttribute("autoplay", true);
 };
-
-
-
-//fonction qui ferme la light box
 
 export const closeLightbox = () => {
   ELEMENTMODAL.lightBox.classList.remove("show_lightbox");

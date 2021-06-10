@@ -82,7 +82,7 @@
       margin: 15px auto;
       object-fit: cover;
     }
-    img {
+    .media {
       @include size-container(100%, 250px);
     }
     .describe-picture {

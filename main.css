@@ -200,7 +200,8 @@ body {
 }
 
 .fa-heart::before {
-  margin-left: 10px;
+  margin-left: 5px;
+  color: #901c1c;
 }
 
 .pages-header {
@@ -441,40 +442,36 @@ option {
   grid-template-columns: repeat(auto-fill, 400px);
   grid-gap: 50px;
 }
-.container-picture .date_picture, .container-picture .date_video {
-  color: #901c1c;
-}
 
 .picture {
   margin: 0;
   width: 100%;
   position: relative;
+  color: #901c1c;
 }
 .picture figure {
   margin: 0;
 }
-.picture img {
+.picture .media {
   width: 400px;
   height: 400px;
   object-fit: cover;
   object-position: center;
   border-radius: 5px;
 }
-
-.describe-picture, .describe-video {
+.picture .describe-media {
   width: 100%;
   padding: 5px;
   font: 25px;
-  color: #901c1c;
 }
-
-.count_like, .count_like_video {
+.picture .number_like {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
   position: absolute;
-  display: inline-flex;
-  flex-direction: row-reverse;
-  color: #901c1c;
+  bottom: 5px;
   right: 0;
-  bottom: 2%;
 }
 
 .video {
@@ -632,7 +629,7 @@ option {
     margin: 15px auto;
     object-fit: cover;
   }
-  .container-picture img {
+  .container-picture .media {
     width: 100%;
     height: 250px;
   }

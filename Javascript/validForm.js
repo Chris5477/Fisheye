@@ -1,5 +1,6 @@
 import { ELEMENTFORM, GETMSG } from "./constant.js";
 import { informUser } from "./function.js"
+
 const messageForm = document.createElement("p");
 messageForm.setAttribute("tabindex", "0")
 
