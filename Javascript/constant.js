@@ -1,5 +1,4 @@
 export const ELEMENTHTML = {
-    title : document.querySelector("head title"),
     worker : [...document.querySelectorAll(".photographer")],
     tagNavigation : [...document.querySelectorAll(".index_nav a")],
     allTags : document.querySelector(".all_tags"),

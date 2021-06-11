@@ -1,4 +1,4 @@
-import { ELEMENTHTML, ELEMENTMODAL, ELEMENTFORM } from "./constant.js";
+import { ELEMENTHTML, ELEMENTMODAL, ELEMENTFORM, ELEMENTBTN } from "./constant.js";
 
 
 export const showAllTags = () => {
@@ -127,17 +127,19 @@ export const showElement = () => {
   ELEMENTHTML.header.className = "pages-header";
 };
 
+
+
 export const pictureInLightbox = (source) => {
-  ELEMENTHTML.movie.style.visibility = "hidden";
-  ELEMENTHTML.photo.style.visibility = "visible";
-  ELEMENTHTML.photo.setAttribute("src", source);
+ ELEMENTHTML.movie.style.visibility = "hidden";
+ ELEMENTHTML.photo.style.visibility = "visible";
+ ELEMENTHTML.photo.setAttribute("src", source);
 };
 
 export const videoInLightbox = (source) => {
-  ELEMENTHTML.movie.style.visibility = "visible";
-  ELEMENTHTML.photo.style.visibility = "hidden";
-  ELEMENTHTML.movie.setAttribute("src", source);
-  ELEMENTHTML.movie.setAttribute("autoplay", true);
+ ELEMENTHTML.movie.style.visibility = "visible";
+ ELEMENTHTML.photo.style.visibility = "hidden";
+ ELEMENTHTML.movie.setAttribute("src", source);
+ ELEMENTHTML.movie.setAttribute("autoplay", true);
 };
 
 export const closeLightbox = () => {
