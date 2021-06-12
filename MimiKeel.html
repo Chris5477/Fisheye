@@ -29,9 +29,7 @@
                     <span class="tagofphotographer"></span>
                     <span class="tagofphotographer"></span>
                 </div>
-           
                     <img tabindex="0" aria-label="Photo de Mimi Keel" class="picture-profil" src="." alt="Mimi Keel">
-           
             </article>
         </div>
         <section tabindex="0" aria-label="Travaux du photographe" class="work_photographer">
@@ -47,53 +45,60 @@
             <div class="container-picture"></div>
         </section>
         <div class="like_and_price">
-            <p tabindex="0" class="liked">297081</p
+            <p tabindex="0" class="liked">297081<span role="button" class="fas fa-heart"></span></p
                 ><p tabindex="0" class="price"></p>
             </div>
         </main>
-        <div tabindex="0" role="dialog" aria-label="Modale de contact" class="modal_contact">
-            <div class="content_modal">
-                <header class="head_forms">
-                    <h1 tabindex="0">Contactez-moi <br />Mimi Keel</h1>
-                    <button aria-label="Fermer la modal" class="close_modal">x</button>
-                </header>
-                <form action="#" method="POST" class="forms_photographer">
-                    <div role="group" aria-labelledby="prenom" class="formData">
-                        <label for="prenom">Prénom</label>
-                        <input  type="text" id="prenom" name="firstname" class="firstname" minlength="2" aria-required="true" />
-                    </div>
-                    <div role="group" aria-labelledby="nom" class="formData">
-                        <label for="nom">Nom</label>
-                        <input  type="text" id="nom" name="lastname" class="lastname" minlength="2"  aria-required="true" />
-                    </div>
-                    <div role="group" aria-labelledby="email" class="formData">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="mail" class="mail" aria-required="true"/>
-                    </div>
-                    <div role="group" aria-labelledby="message" class="formData">
-                        <label for="message">Votre message</label>
-                        <textarea  name="message" id="message" aria-required="true" minlength="20"></textarea>
-                    </div>
-                    <input aria-label="Envoyer votre message" class="senddata" type="submit" value="Envoyer" />
-                </form>
+        <footer>
+              <p>
+                <a href="https://achecker.achecks.ca/checker/index.php?uri=referer&gid=WCAG2-AA">
+                  <img src="https://achecker.achecks.ca/images/icon_W2_aa.jpg" alt="WCAG 2.0 (Level AA)" height="32" width="102" />
+                </a>
+              </p>
+        </footer>
+            <div tabindex="0" role="dialog" aria-label="Modale de contact" class="modal_contact">
+                <div class="content_modal">
+                    <header class="head_forms">
+                        <h1 tabindex="0">Contactez-moi <br />Mimi Keel</h1>
+                        <button aria-label="Fermer la modal" class="close_modal">x</button>
+                    </header>
+                    <form action="#" method="POST" class="forms_photographer">
+                        <div role="group" aria-labelledby="prenom" class="formData">
+                            <label for="prenom">Prénom</label>
+                            <input  type="text" id="prenom" name="firstname" class="firstname" minlength="2" aria-required="true" />
+                        </div>
+                        <div role="group" aria-labelledby="nom" class="formData">
+                            <label for="nom">Nom</label>
+                            <input  type="text" id="nom" name="lastname" class="lastname" minlength="2"  aria-required="true" />
+                        </div>
+                        <div role="group" aria-labelledby="email" class="formData">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="mail" class="mail" aria-required="true"/>
+                        </div>
+                        <div role="group" aria-labelledby="message" class="formData">
+                            <label for="message">Votre message</label>
+                            <textarea  name="message" id="message" aria-required="true" minlength="20"></textarea>
+                        </div>
+                        <input aria-label="Envoyer votre message" class="senddata" type="submit" value="Envoyer" />
+                    </form>
+                </div>
             </div>
-        </div>
-        <div tabindex="0" role="dialog" class="lightbox">
-            <span class="close_lightbox">X</span>
-            <div class="content_lightbox">
-                <button aria-label="Image précédente" class="btn previous"><span class="fas fa-chevron-left"></span></button>
-                <figure class="figure_lightbox">
-                    <img class="photo" src="." alt="">
-                    <video class="movie" src=".">
-                        <track kind="captions" src="caption_video/mimikeel.vtt" srclang="fr" label="sous-titre français">
-                    </video>
-                    <figcaption></figcaption>
-                </figure>
-                <button aria-label="image suivante" class="btn next"><span class="fas fa-chevron-right"></span></button>
-            </div>
-        </div>
-        <script type="module" src="Javascript/mimikeel.js"></script>
-    </body>
-    </html>
+            <div tabindex="0" role="dialog" class="lightbox">
+                <span class="close_lightbox">X</span>
+                <div class="content_lightbox">
+                    <button aria-label="Image précédente" class="btn previous"><span class="fas fa-chevron-left"></span></button>
+                    <figure class="figure_lightbox">
+                        <img class="photo" src="." alt="">
+                        <video class="movie" src=".">
+                            <track kind="captions" src="caption_video/mimikeel.vtt" srclang="fr" label="sous-titre français">
+                        </video>
+                        <figcaption></figcaption>
+                    </figure>
+                    <button aria-label="image suivante" class="btn next"><span class="fas fa-chevron-right"></span></button>
+                </div>
+            </div>      
+            <script type="module" src="Javascript/mimikeel.js"></script>
+        </body>
+        </html>
         
         

@@ -131,7 +131,7 @@ body {
 
 .close_modal {
   background-color: #db8776;
-  color: #ffffff;
+  color: black;
   outline-color: transparent;
   border: transparent;
   font-size: 60px;
@@ -195,12 +195,15 @@ body {
 }
 
 .error {
-  color: #720000;
+  color: #580808;
   font-weight: bold;
 }
 
 .fa-heart::before {
   margin-left: 5px;
+}
+
+.icon {
   color: #901c1c;
 }
 
