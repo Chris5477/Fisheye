@@ -36,7 +36,7 @@ const createImgElement = () => {
   ELEMENTHTML.container.innerHTML += `<div role="figure" class="picture">
     <p tabindex="0" class="date"></p>
     <figure>
-        <img tabindex="0" class="media" src="" alt=""/>
+        <img tabindex="0" class="media label_img" src="" alt=""/>
         <figcaption tabindex="0" class="title describe-media" lang="en"></figcaption>
     </figure>
     <div class="number_like">
@@ -77,10 +77,12 @@ export const showMedia = (array, member) => {
   const liked = [...document.querySelectorAll(".count_like")];
   const dateMedia = [...document.querySelectorAll(".date")];
   const media = [...document.querySelectorAll(".media")];
+  const description = [...document.querySelectorAll(".label_img")]
   // Pour chaque element , on remplit par les valeurs du tableau
   legend.forEach((item, key) => (item.innerHTML = array[key].title));
   liked.forEach((item, key) => (item.innerHTML = " " + array[key].likes));
   dateMedia.forEach((item, key) => (item.innerHTML = array[key].date));
+  description.forEach((item,key) => item.setAttribute("aria-label", array[key].description))
   media.forEach((item, key) => {
     array[key].hasOwnProperty("image")
       ? item.setAttribute("src", `ressources/${member}/${array[key].image}`)

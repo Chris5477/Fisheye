@@ -9,7 +9,7 @@ fetch("./data.json")
 
     dataProfil(objPhotographer, 1);
     const ellie = sortJson(objMedia, 930);
-    ELEMENTHTML.totalMedia.innerHTML = `La galerie de ce photographe content ${ellie.length} photos/videos`;
+    ELEMENTHTML.totalMedia.innerHTML = `La galerie de ce photographe contient ${ellie.length} photos/videos`;
     createElements(ellie);
     showMedia(ellie, "Ellie_Rose");
     newContainer(ellie, "Ellie_Rose");

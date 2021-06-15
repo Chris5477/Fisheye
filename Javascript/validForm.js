@@ -26,6 +26,6 @@ export const validData = (e) => {
     
     if(isValid){
         e.preventDefault();
-        alert(GETMSG[3].msg);
+        alert(`<p role="alert">${GETMSG[3].msg}</p>`);
     }
 } 

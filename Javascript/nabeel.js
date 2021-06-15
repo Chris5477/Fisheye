@@ -9,7 +9,7 @@ fetch("./data.json")
 
     dataProfil(objPhotographer, 3);
     const nabeel = sortJson(objMedia, 527);
-    ELEMENTHTML.totalMedia.innerHTML = `La galerie de ce photographe content ${nabeel.length} photos/videos`;
+    ELEMENTHTML.totalMedia.innerHTML = `La galerie de ce photographe contient ${nabeel.length} photos/videos`;
     createElements(nabeel)
     showMedia(nabeel, "Nabeel");
     newContainer(nabeel, "Nabeel");

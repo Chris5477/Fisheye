@@ -10,7 +10,7 @@ fetch("./data.json")
 
     dataProfil(objPhotographer, 0);
     const mimi = sortJson(objMedia, 243);
-    ELEMENTHTML.totalMedia.innerHTML = `La galerie de ce photographe content ${mimi.length} photos/videos`;
+    ELEMENTHTML.totalMedia.innerHTML = `La galerie de ce photographe contient ${mimi.length} photos/videos`;
     createElements(mimi);
     showMedia(mimi, "Mimi");
     newContainer(mimi, "Mimi");
