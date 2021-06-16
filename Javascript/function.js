@@ -87,6 +87,7 @@ export const showMedia = (array, member) => {
     array[key].hasOwnProperty("image")
       ? item.setAttribute("src", `ressources/${member}/${array[key].image}`)
       : item.setAttribute("src", `ressources/${member}/${array[key].video}`);
+      item.setAttribute("alt", array[key].description)
   });
 };
 
